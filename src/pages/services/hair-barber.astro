@@ -99,8 +99,120 @@ import CTAStrip from "../../components/CTAStrip.astro";
     </div>
   </section>
 
+  <!-- Pricing -->
+  <section class="bg-white py-20" id="pricing">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-accent">Pricing</p>
+        <h2 class="mt-2 text-3xl font-black text-charcoal sm:text-4xl">Transparent pricing</h2>
+        <p class="mx-auto mt-4 max-w-lg text-gray-500">
+          No hidden fees, no monthly hosting charges. You pay for the build,
+          you own the site. Optional support if you want it.
+        </p>
+      </div>
+      <div class="mx-auto mt-14 grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-3">
+        {[
+          {
+            name: "Starter",
+            price: "495",
+            desc: "Perfect for a solo barber or small salon that needs a solid online presence.",
+            features: [
+              "5-page website",
+              "Mobile-first design",
+              "Basic local SEO setup",
+              "Contact form",
+              "Google Maps integration",
+              "SSL & free hosting",
+            ],
+            highlight: false,
+          },
+          {
+            name: "Growth",
+            price: "895",
+            desc: "For salons and barbershops that want to rank locally and convert visitors into bookings.",
+            features: [
+              "7+ page website",
+              "Mobile-first design",
+              "Full local SEO setup",
+              "Service & gallery pages",
+              "Booking system integration",
+              "Google Business Profile setup",
+              "Google Reviews on-site",
+              "SSL & free hosting",
+            ],
+            highlight: true,
+            badge: "Most Popular",
+          },
+          {
+            name: "Premium",
+            price: "1,495",
+            desc: "Multi-stylist salons or barbershops with ambitious growth plans.",
+            features: [
+              "10+ page website",
+              "Mobile-first design",
+              "Full local SEO setup",
+              "Service, gallery & team pages",
+              "Booking system integration",
+              "Google Business Profile setup",
+              "Google Reviews on-site",
+              "Blog / content section",
+              "Monthly performance report",
+              "SSL & free hosting",
+            ],
+            highlight: false,
+          },
+        ].map((plan) => (
+          <div class:list={[
+            "relative flex flex-col rounded-2xl border-2 p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl",
+            plan.highlight
+              ? "border-accent bg-accent/5 shadow-lg"
+              : "border-gray-100 bg-white shadow-sm",
+          ]}>
+            {plan.badge && (
+              <div class="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-accent px-4 py-1 text-xs font-bold uppercase text-white">
+                {plan.badge}
+              </div>
+            )}
+            <h3 class="text-center text-lg font-bold text-charcoal">{plan.name}</h3>
+            <p class="mt-4 text-center">
+              <span class="text-sm text-gray-400">from</span>
+              <span class="ml-1 text-4xl font-black text-charcoal">£{plan.price}</span>
+            </p>
+            <p class="mt-2 text-center text-xs text-gray-400">one-off payment</p>
+            <p class="mt-4 text-center text-sm leading-relaxed text-gray-500">{plan.desc}</p>
+            <ul class="mt-6 flex-1 space-y-3">
+              {plan.features.map((f) => (
+                <li class="flex items-center gap-3 text-sm text-gray-600">
+                  <svg class="h-4 w-4 flex-shrink-0 text-fresh" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                  {f}
+                </li>
+              ))}
+            </ul>
+            <a
+              href="/contact/"
+              class:list={[
+                "mt-8 block rounded-lg py-3 text-center text-sm font-semibold transition-all duration-200",
+                plan.highlight
+                  ? "bg-accent text-white hover:bg-accent-light hover:shadow-lg hover:shadow-accent/25"
+                  : "border-2 border-charcoal text-charcoal hover:bg-charcoal hover:text-white",
+              ]}
+            >
+              Get Started
+            </a>
+          </div>
+        ))}
+      </div>
+      <div class="mx-auto mt-10 max-w-2xl rounded-xl border border-gray-100 bg-gray-50 p-6 text-center">
+        <p class="text-sm font-semibold text-charcoal">Optional ongoing support: £25/month</p>
+        <p class="mt-1 text-sm text-gray-500">Content updates, performance monitoring, technical fixes, and priority email support. Cancel any time.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- FAQ -->
-  <section class="bg-white py-20">
+  <section class="bg-gray-50 py-20">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="text-center">
         <p class="text-sm font-bold uppercase tracking-[0.2em] text-accent">FAQ</p>
@@ -113,7 +225,7 @@ import CTAStrip from "../../components/CTAStrip.astro";
             { question: "Do I need to provide photos?", answer: "Photos of your work are the single most important thing on a hair/barber site. We'll guide you on what to shoot and how. Everything else we handle." },
             { question: "Can you integrate with my booking system?", answer: "Yes. We integrate with all major booking platforms, or if you're using apptmint we can set that up seamlessly." },
             { question: "How long until I see results from SEO?", answer: "Local SEO typically starts showing results within 4-8 weeks. We've had clients ranking on the first page within six weeks of launch." },
-            { question: "What does it cost?", answer: "We'll give you a clear quote on the discovery call. No hidden fees, no surprise invoices. Most hair/barber sites fall within a predictable range." },
+            { question: "Are there any ongoing costs?", answer: "Hosting is free -- that's built into our architecture. The only ongoing cost is our optional £25/month support plan for content updates and maintenance. No lock-in, cancel any time." },
           ]}
         />
       </div>
