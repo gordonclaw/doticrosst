@@ -9,150 +9,101 @@ import CTAStrip from "../../components/CTAStrip.astro";
   title="API Workflows & Automation | doticrosst"
   description="Replace expensive SaaS tools with open-source alternatives. We connect your systems, automate your admin, and cut your software costs."
 >
-  <div class="container">
-    <Breadcrumb
-      items={[
-        { label: "Home", href: "/" },
-        { label: "Services", href: "/services/" },
-        { label: "API Workflows" },
-      ]}
-    />
-  </div>
-
-  <section class="section">
-    <div class="container">
-      <div class="page-intro">
-        <h1>Stop paying for software you don't need</h1>
-        <p>
+  <section class="bg-charcoal py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <Breadcrumb
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Services", href: "/services/" },
+          { label: "API Workflows" },
+        ]}
+      />
+      <div class="mt-4 max-w-2xl">
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-accent-light">Automation</p>
+        <h1 class="mt-3 text-4xl font-black text-white sm:text-5xl">
+          Stop paying for software you don't need
+        </h1>
+        <p class="mt-6 text-lg leading-relaxed text-gray-300">
           Most small businesses are paying for a stack of SaaS tools that barely
           talk to each other. We replace them with open-source alternatives,
-          connect the pieces with APIs, and automate the repetitive work that
-          eats your time.
+          connect the pieces with APIs, and automate the repetitive work.
         </p>
       </div>
     </div>
   </section>
 
-  <section class="section section-alt">
-    <div class="container">
-      <div class="section-header">
-        <h2>What we do</h2>
+  <!-- Features -->
+  <section class="bg-white py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-accent">What We Do</p>
+        <h2 class="mt-2 text-3xl font-black text-charcoal sm:text-4xl">How we save you money</h2>
       </div>
-      <div class="grid-3">
-        <div class="feature card">
-          <h3>SaaS replacement</h3>
-          <p>
-            Audit your current tools and replace the expensive ones with
-            open-source alternatives you own and control.
-          </p>
-        </div>
-        <div class="feature card">
-          <h3>API integration</h3>
-          <p>
-            Connect your booking system, accounting, email marketing, and
-            whatever else needs to talk to each other.
-          </p>
-        </div>
-        <div class="feature card">
-          <h3>Workflow automation</h3>
-          <p>
-            Automate the admin -- appointment confirmations, follow-up emails,
-            stock alerts, reporting. Set it and forget it.
-          </p>
-        </div>
-        <div class="feature card">
-          <h3>Data migration</h3>
-          <p>
-            Moving off a legacy platform? We extract, clean, and migrate your
-            data without losing anything.
-          </p>
-        </div>
-        <div class="feature card">
-          <h3>Custom dashboards</h3>
-          <p>
-            See your numbers in one place. Revenue, bookings, stock levels --
-            whatever matters to your business.
-          </p>
-        </div>
-        <div class="feature card">
-          <h3>Ongoing maintenance</h3>
-          <p>
-            Systems need looking after. We monitor, update, and fix things before
-            they become problems.
-          </p>
-        </div>
+      <div class="mt-14 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {[
+          { title: "SaaS replacement", desc: "Audit your current tools and replace the expensive ones with open-source alternatives you own and control.", icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>' },
+          { title: "API integration", desc: "Connect your booking system, accounting, email marketing, and whatever else needs to talk to each other.", icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>' },
+          { title: "Workflow automation", desc: "Automate the admin -- appointment confirmations, follow-up emails, stock alerts, reporting. Set it and forget it.", icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>' },
+          { title: "Data migration", desc: "Moving off a legacy platform? We extract, clean, and migrate your data without losing anything.", icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>' },
+          { title: "Custom dashboards", desc: "See your numbers in one place. Revenue, bookings, stock levels -- whatever matters to your business.", icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>' },
+          { title: "Ongoing maintenance", desc: "Systems need looking after. We monitor, update, and fix things before they become problems.", icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>' },
+        ].map((f) => (
+          <div class="group rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+            <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-accent/10 text-accent transition-all duration-300 group-hover:bg-accent group-hover:text-white">
+              <div class="h-6 w-6 transition-transform duration-300 group-hover:scale-110" set:html={f.icon} />
+            </div>
+            <h3 class="text-lg font-bold text-charcoal">{f.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-gray-500">{f.desc}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <h2>Common swaps</h2>
-        <p>Some of the replacements we make regularly.</p>
+  <!-- Common Swaps -->
+  <section class="bg-gray-50 py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-accent">Common Swaps</p>
+        <h2 class="mt-2 text-3xl font-black text-charcoal sm:text-4xl">What we replace</h2>
+        <p class="mx-auto mt-4 max-w-md text-gray-500">Some of the swaps we make regularly.</p>
       </div>
-      <div class="swaps">
-        <div class="swap-row">
-          <span class="swap-from">Expensive scheduling SaaS</span>
-          <span class="swap-arrow">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </span>
-          <span class="swap-to">BookJanus (flat fee)</span>
-        </div>
-        <div class="swap-row">
-          <span class="swap-from">Wix / Squarespace monthly</span>
-          <span class="swap-arrow">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </span>
-          <span class="swap-to">Static site (free hosting)</span>
-        </div>
-        <div class="swap-row">
-          <span class="swap-from">Mailchimp premium</span>
-          <span class="swap-arrow">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </span>
-          <span class="swap-to">Open-source email tooling</span>
-        </div>
-        <div class="swap-row">
-          <span class="swap-from">Multiple disconnected tools</span>
-          <span class="swap-arrow">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </span>
-          <span class="swap-to">One connected system</span>
-        </div>
+      <div class="mx-auto mt-14 max-w-xl space-y-0">
+        {[
+          { from: "Expensive scheduling SaaS", to: "BookJanus (flat fee)" },
+          { from: "Wix / Squarespace monthly", to: "Static site (free hosting)" },
+          { from: "Mailchimp premium", to: "Open-source email tooling" },
+          { from: "Multiple disconnected tools", to: "One connected system" },
+        ].map((swap) => (
+          <div class="flex items-center gap-4 border-b border-gray-200 py-5">
+            <span class="flex-1 text-sm text-gray-400 line-through">{swap.from}</span>
+            <svg class="h-5 w-5 flex-shrink-0 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
+            </svg>
+            <span class="flex-1 text-sm font-semibold text-charcoal">{swap.to}</span>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <section class="section section-alt">
-    <div class="container">
-      <div class="section-header">
-        <h2>Frequently asked questions</h2>
+  <!-- FAQ -->
+  <section class="bg-white py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-accent">FAQ</p>
+        <h2 class="mt-2 text-3xl font-black text-charcoal sm:text-4xl">Frequently asked questions</h2>
       </div>
-      <FAQ
-        items={[
-          {
-            question: "Is this just for hair businesses?",
-            answer:
-              "No. While our booking and web services focus on the hair industry, our automation and API work applies to any small business that wants to cut software costs and streamline operations.",
-          },
-          {
-            question: "Will I lose features switching from paid SaaS?",
-            answer:
-              "We audit what you actually use before recommending any switch. Most businesses use about 20% of their paid tool's features. We make sure you keep everything that matters.",
-          },
-          {
-            question: "How much can I save?",
-            answer:
-              "It depends on your current stack, but typical savings are several hundred pounds per month. The initial build pays for itself quickly.",
-          },
-          {
-            question: "What if something breaks?",
-            answer:
-              "We offer ongoing maintenance plans. Systems are monitored and we fix issues proactively, usually before you notice them.",
-          },
-        ]}
-      />
+      <div class="mt-14">
+        <FAQ
+          items={[
+            { question: "Is this just for hair businesses?", answer: "No. While our booking and web services focus on the hair industry, our automation and API work applies to any small business that wants to cut software costs and streamline operations." },
+            { question: "Will I lose features switching from paid SaaS?", answer: "We audit what you actually use before recommending any switch. Most businesses use about 20% of their paid tool's features. We make sure you keep everything that matters." },
+            { question: "How much can I save?", answer: "It depends on your current stack, but typical savings are several hundred pounds per month. The initial build pays for itself quickly." },
+            { question: "What if something breaks?", answer: "We offer ongoing maintenance plans. Systems are monitored and we fix issues proactively, usually before you notice them." },
+          ]}
+        />
+      </div>
     </div>
   </section>
 
@@ -162,61 +113,3 @@ import CTAStrip from "../../components/CTAStrip.astro";
     buttonText="Book a Free Audit"
   />
 </BaseLayout>
-
-<style>
-  .page-intro {
-    max-width: 680px;
-  }
-
-  .page-intro h1 {
-    margin-bottom: var(--space-lg);
-  }
-
-  .page-intro p {
-    color: var(--text-light);
-    font-size: 1.1rem;
-    line-height: 1.7;
-  }
-
-  .feature h3 {
-    margin-bottom: var(--space-sm);
-  }
-
-  .feature p {
-    color: var(--text-light);
-    font-size: 0.95rem;
-  }
-
-  /* Swaps */
-  .swaps {
-    max-width: 640px;
-    margin: 0 auto;
-  }
-
-  .swap-row {
-    display: flex;
-    align-items: center;
-    gap: var(--space-md);
-    padding: var(--space-md) 0;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .swap-from {
-    flex: 1;
-    color: var(--text-light);
-    text-decoration: line-through;
-    font-size: 0.95rem;
-  }
-
-  .swap-arrow {
-    flex-shrink: 0;
-    color: var(--primary);
-  }
-
-  .swap-to {
-    flex: 1;
-    font-weight: 600;
-    color: var(--text);
-    font-size: 0.95rem;
-  }
-</style>

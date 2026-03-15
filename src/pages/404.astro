@@ -3,33 +3,18 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Page Not Found | doticrosst" noindex={true}>
-  <section class="not-found">
-    <div class="container">
-      <h1>404</h1>
-      <p>That page doesn't exist. It might have been moved or you may have mistyped the URL.</p>
-      <a href="/" class="btn btn-primary">Back to Home</a>
+  <section class="flex min-h-[70vh] items-center justify-center bg-charcoal">
+    <div class="px-4 text-center">
+      <p class="text-8xl font-black text-accent sm:text-9xl">404</p>
+      <p class="mt-4 text-lg text-gray-400">
+        That page doesn't exist. It might have been moved or you may have mistyped the URL.
+      </p>
+      <a
+        href="/"
+        class="mt-8 inline-flex rounded-lg bg-accent px-7 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-accent-light hover:shadow-lg hover:shadow-accent/25"
+      >
+        Back to Home
+      </a>
     </div>
   </section>
 </BaseLayout>
-
-<style>
-  .not-found {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 60vh;
-    text-align: center;
-  }
-
-  h1 {
-    font-size: 5rem;
-    color: var(--primary);
-    margin-bottom: var(--space-md);
-  }
-
-  p {
-    color: var(--text-light);
-    font-size: 1.1rem;
-    margin: 0 auto var(--space-xl);
-  }
-</style>

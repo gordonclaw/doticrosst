@@ -24,15 +24,18 @@ const schema = {
 };
 ---
 
-<nav class="breadcrumb" aria-label="Breadcrumb">
-  <ol>
+<nav class="py-4" aria-label="Breadcrumb">
+  <ol class="flex flex-wrap items-center gap-1.5 text-sm text-gray-400">
     {
       items.map((item, i) => (
-        <li>
+        <li class="flex items-center gap-1.5">
+          {i > 0 && <span class="text-gray-600">/</span>}
           {item.href && i < items.length - 1 ? (
-            <a href={item.href}>{item.label}</a>
+            <a href={item.href} class="transition-colors duration-200 hover:text-accent-light">
+              {item.label}
+            </a>
           ) : (
-            <span aria-current="page">{item.label}</span>
+            <span class="font-medium text-white">{item.label}</span>
           )}
         </li>
       ))
@@ -41,38 +44,3 @@ const schema = {
 </nav>
 
 <script type="application/ld+json" set:html={JSON.stringify(schema)} />
-
-<style>
-  .breadcrumb {
-    padding: var(--space-md) 0;
-  }
-
-  ol {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: var(--space-xs);
-    font-size: 0.85rem;
-    color: var(--text-light);
-  }
-
-  li:not(:last-child)::after {
-    content: "/";
-    margin-left: var(--space-xs);
-    color: var(--border);
-  }
-
-  a {
-    color: var(--primary);
-    transition: color var(--transition);
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-  span[aria-current] {
-    color: var(--text);
-    font-weight: 500;
-  }
-</style>

@@ -4,94 +4,55 @@ import Breadcrumb from "../components/Breadcrumb.astro";
 ---
 
 <BaseLayout title="Terms of Service | doticrosst" noindex={true}>
-  <div class="container">
-    <Breadcrumb
-      items={[
-        { label: "Home", href: "/" },
-        { label: "Terms of Service" },
-      ]}
-    />
-  </div>
+  <section class="bg-charcoal py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Terms of Service" }]} />
+      <h1 class="mt-4 text-4xl font-black text-white sm:text-5xl">Terms of Service</h1>
+      <p class="mt-3 text-sm text-gray-400">Last updated: March 2026</p>
+    </div>
+  </section>
 
-  <section class="section">
-    <div class="container prose">
-      <h1>Terms of Service</h1>
-      <p class="updated">Last updated: March 2026</p>
-
-      <h2>Agreement</h2>
-      <p>
-        By accessing doticrosst.com, you agree to these terms. If you do not
-        agree, please do not use this website.
-      </p>
-
-      <h2>Services</h2>
-      <p>
-        doticrosst provides digital agency services including website design,
-        booking system development, SEO, and workflow automation. Specific terms
-        for individual projects are agreed in writing before work begins.
-      </p>
-
-      <h2>Intellectual property</h2>
-      <p>
-        Upon full payment, clients own the deliverables created for their
-        project. doticrosst retains the right to use anonymised examples of work
-        in our portfolio unless otherwise agreed.
-      </p>
-
-      <h2>Limitation of liability</h2>
-      <p>
-        doticrosst provides services on an "as is" basis. We are not liable for
-        any indirect or consequential damages arising from use of our services
-        or this website.
-      </p>
-
-      <h2>Changes</h2>
-      <p>
-        We may update these terms from time to time. Continued use of the
-        website constitutes acceptance of any changes.
-      </p>
-
-      <h2>Contact</h2>
-      <p>
-        Questions about these terms? Email
-        <a href="mailto:hello@doticrosst.com">hello@doticrosst.com</a>.
-      </p>
+  <section class="bg-white py-20">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <div class="space-y-10">
+        <div>
+          <h2 class="text-xl font-bold text-charcoal">Agreement</h2>
+          <p class="mt-3 leading-relaxed text-gray-500">
+            By accessing doticrosst.com, you agree to these terms. If you do not agree, please do not use this website.
+          </p>
+        </div>
+        <div>
+          <h2 class="text-xl font-bold text-charcoal">Services</h2>
+          <p class="mt-3 leading-relaxed text-gray-500">
+            doticrosst provides digital agency services including website design, booking system development, SEO, and workflow automation. Specific terms for individual projects are agreed in writing before work begins.
+          </p>
+        </div>
+        <div>
+          <h2 class="text-xl font-bold text-charcoal">Intellectual property</h2>
+          <p class="mt-3 leading-relaxed text-gray-500">
+            Upon full payment, clients own the deliverables created for their project. doticrosst retains the right to use anonymised examples of work in our portfolio unless otherwise agreed.
+          </p>
+        </div>
+        <div>
+          <h2 class="text-xl font-bold text-charcoal">Limitation of liability</h2>
+          <p class="mt-3 leading-relaxed text-gray-500">
+            doticrosst provides services on an "as is" basis. We are not liable for any indirect or consequential damages arising from use of our services or this website.
+          </p>
+        </div>
+        <div>
+          <h2 class="text-xl font-bold text-charcoal">Changes</h2>
+          <p class="mt-3 leading-relaxed text-gray-500">
+            We may update these terms from time to time. Continued use of the website constitutes acceptance of any changes.
+          </p>
+        </div>
+        <div>
+          <h2 class="text-xl font-bold text-charcoal">Contact</h2>
+          <p class="mt-3 leading-relaxed text-gray-500">
+            Questions about these terms? Email
+            <a href="mailto:hello@doticrosst.com" class="font-medium text-accent hover:text-accent-light">hello@doticrosst.com</a>.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 </BaseLayout>
-
-<style>
-  .prose {
-    max-width: 720px;
-  }
-
-  .prose h1 {
-    margin-bottom: var(--space-sm);
-  }
-
-  .updated {
-    color: var(--text-light);
-    font-size: 0.9rem;
-    margin-bottom: var(--space-2xl);
-  }
-
-  .prose h2 {
-    font-size: 1.25rem;
-    margin-top: var(--space-2xl);
-    margin-bottom: var(--space-sm);
-  }
-
-  .prose p {
-    color: var(--text-light);
-    line-height: 1.7;
-    margin-bottom: var(--space-md);
-  }
-
-  .prose a {
-    color: var(--primary);
-  }
-
-  .prose a:hover {
-    text-decoration: underline;
-  }
-</style>

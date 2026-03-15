@@ -22,292 +22,143 @@ function isActive(href: string) {
 }
 ---
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="/" class="logo" aria-label="doticrosst home">
-      <span class="logo-text">dot<strong>icrosst</strong></span>
+<header class="sticky top-0 z-50 border-b border-white/10 bg-charcoal/95 backdrop-blur-md">
+  <div class="mx-auto flex h-18 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+    <a href="/" class="flex items-center gap-2" aria-label="doticrosst home">
+      <span class="text-xl font-light tracking-tight text-white">dot<strong class="font-extrabold text-accent-light">icrosst</strong></span>
     </a>
 
-    <nav class="nav-desktop" aria-label="Main navigation">
-      <ul class="nav-list">
-        {
-          navLinks.map((link) =>
-            link.children ? (
-              <li class="nav-item has-dropdown">
-                <button
-                  class:list={["nav-link dropdown-toggle", { active: currentPath.startsWith("/services") }]}
-                  aria-expanded="false"
-                  aria-haspopup="true"
-                >
-                  {link.label}
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                    <path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-                  </svg>
-                </button>
-                <ul class="dropdown">
-                  {link.children.map((child) => (
-                    <li>
-                      <a href={child.href} class:list={["dropdown-link", { active: isActive(child.href) }]}>
-                        {child.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </li>
-            ) : (
-              <li class="nav-item">
-                <a href={link.href} class:list={["nav-link", { active: isActive(link.href) }]}>
-                  {link.label}
-                </a>
-              </li>
-            )
-          )
-        }
-      </ul>
-    </nav>
-
-    <a href="/contact/" class="btn btn-primary header-cta">Get Started</a>
-
-    <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </button>
-  </div>
-
-  <nav class="nav-mobile" aria-label="Mobile navigation" hidden>
-    <ul class="mobile-list">
+    <nav class="hidden items-center gap-1 md:flex" aria-label="Main navigation">
       {
         navLinks.map((link) =>
           link.children ? (
-            <>
-              {link.children.map((child) => (
-                <li>
-                  <a href={child.href} class:list={["mobile-link", { active: isActive(child.href) }]}>
-                    {child.label}
-                  </a>
-                </li>
-              ))}
-            </>
-          ) : (
-            <li>
-              <a href={link.href} class:list={["mobile-link", { active: isActive(link.href) }]}>
+            <div class="relative group">
+              <button
+                class:list={[
+                  "flex items-center gap-1 rounded-lg px-4 py-2 text-sm font-medium transition-colors duration-200",
+                  currentPath.startsWith("/services")
+                    ? "bg-white/10 text-white"
+                    : "text-gray-300 hover:bg-white/10 hover:text-white",
+                ]}
+                aria-expanded="false"
+                aria-haspopup="true"
+              >
                 {link.label}
-              </a>
-            </li>
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" class="transition-transform duration-200 group-hover:rotate-180" aria-hidden="true">
+                  <path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+              </button>
+              <div class="invisible absolute left-0 top-full pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
+                <div class="min-w-[200px] rounded-xl border border-white/10 bg-charcoal-light p-2 shadow-2xl">
+                  {link.children.map((child) => (
+                    <a
+                      href={child.href}
+                      class:list={[
+                        "block rounded-lg px-4 py-2.5 text-sm transition-colors duration-200",
+                        isActive(child.href)
+                          ? "bg-accent/20 font-medium text-accent-light"
+                          : "text-gray-300 hover:bg-white/10 hover:text-white",
+                      ]}
+                    >
+                      {child.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ) : (
+            <a
+              href={link.href}
+              class:list={[
+                "rounded-lg px-4 py-2 text-sm font-medium transition-colors duration-200",
+                isActive(link.href)
+                  ? "bg-white/10 text-white"
+                  : "text-gray-300 hover:bg-white/10 hover:text-white",
+              ]}
+            >
+              {link.label}
+            </a>
           )
         )
       }
-      <li>
-        <a href="/contact/" class="btn btn-primary mobile-cta">Get Started</a>
-      </li>
-    </ul>
-  </nav>
+    </nav>
+
+    <div class="hidden items-center gap-3 md:flex">
+      <a
+        href="/contact/"
+        class="rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-accent-light hover:shadow-lg hover:shadow-accent/25"
+      >
+        Get Started
+      </a>
+    </div>
+
+    <button class="flex flex-col gap-1.5 p-2 md:hidden" id="mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span class="block h-0.5 w-6 rounded bg-white transition-all duration-200"></span>
+      <span class="block h-0.5 w-6 rounded bg-white transition-all duration-200"></span>
+      <span class="block h-0.5 w-6 rounded bg-white transition-all duration-200"></span>
+    </button>
+  </div>
+
+  <div class="hidden border-t border-white/10 bg-charcoal md:hidden" id="mobile-nav">
+    <nav class="mx-auto max-w-7xl px-4 py-4 sm:px-6" aria-label="Mobile navigation">
+      <div class="flex flex-col gap-1">
+        {
+          navLinks.map((link) =>
+            link.children ? (
+              link.children.map((child) => (
+                <a
+                  href={child.href}
+                  class:list={[
+                    "rounded-lg px-4 py-3 text-sm font-medium transition-colors duration-200",
+                    isActive(child.href)
+                      ? "bg-white/10 text-white"
+                      : "text-gray-300 hover:bg-white/10 hover:text-white",
+                  ]}
+                >
+                  {child.label}
+                </a>
+              ))
+            ) : (
+              <a
+                href={link.href}
+                class:list={[
+                  "rounded-lg px-4 py-3 text-sm font-medium transition-colors duration-200",
+                  isActive(link.href)
+                    ? "bg-white/10 text-white"
+                    : "text-gray-300 hover:bg-white/10 hover:text-white",
+                ]}
+              >
+                {link.label}
+              </a>
+            )
+          )
+        }
+        <a
+          href="/contact/"
+          class="mt-2 rounded-lg bg-accent px-5 py-3 text-center text-sm font-semibold text-white transition-all duration-200 hover:bg-accent-light"
+        >
+          Get Started
+        </a>
+      </div>
+    </nav>
+  </div>
 </header>
 
 <script>
-  // Mobile menu toggle
-  const toggle = document.querySelector(".mobile-toggle") as HTMLButtonElement;
-  const mobileNav = document.querySelector(".nav-mobile") as HTMLElement;
+  const toggle = document.getElementById("mobile-toggle") as HTMLButtonElement;
+  const nav = document.getElementById("mobile-nav") as HTMLElement;
+  const bars = toggle?.querySelectorAll("span");
 
   toggle?.addEventListener("click", () => {
     const open = toggle.getAttribute("aria-expanded") === "true";
     toggle.setAttribute("aria-expanded", String(!open));
-    toggle.classList.toggle("open");
-    mobileNav.hidden = open;
-  });
-
-  // Desktop dropdown
-  document.querySelectorAll(".dropdown-toggle").forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      const button = e.currentTarget as HTMLButtonElement;
-      const expanded = button.getAttribute("aria-expanded") === "true";
-      // Close all first
-      document.querySelectorAll(".dropdown-toggle").forEach((b) => {
-        b.setAttribute("aria-expanded", "false");
-      });
-      if (!expanded) {
-        button.setAttribute("aria-expanded", "true");
-      }
-    });
-  });
-
-  // Close dropdown on outside click
-  document.addEventListener("click", (e) => {
-    const target = e.target as HTMLElement;
-    if (!target.closest(".has-dropdown")) {
-      document.querySelectorAll(".dropdown-toggle").forEach((b) => {
-        b.setAttribute("aria-expanded", "false");
-      });
+    nav.classList.toggle("hidden");
+    if (bars) {
+      bars[0].classList.toggle("translate-y-2");
+      bars[0].classList.toggle("rotate-45");
+      bars[1].classList.toggle("opacity-0");
+      bars[2].classList.toggle("-translate-y-2");
+      bars[2].classList.toggle("-rotate-45");
     }
   });
 </script>
-
-<style>
-  .site-header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: var(--bg);
-    border-bottom: 1px solid var(--border);
-    height: var(--nav-height);
-  }
-
-  .header-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
-  }
-
-  /* Logo */
-  .logo-text {
-    font-size: 1.35rem;
-    font-weight: 400;
-    color: var(--text);
-    letter-spacing: -0.02em;
-  }
-
-  .logo-text strong {
-    font-weight: 800;
-    color: var(--primary);
-  }
-
-  /* Desktop nav */
-  .nav-list {
-    display: flex;
-    align-items: center;
-    gap: var(--space-xs);
-  }
-
-  .nav-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    padding: var(--space-sm) var(--space-md);
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--text-light);
-    border-radius: var(--radius-sm);
-    transition: color var(--transition), background var(--transition);
-  }
-
-  .nav-link:hover,
-  .nav-link.active {
-    color: var(--primary);
-    background: var(--primary-light);
-  }
-
-  /* Dropdown */
-  .has-dropdown {
-    position: relative;
-  }
-
-  .dropdown {
-    display: none;
-    position: absolute;
-    top: calc(100% + 4px);
-    left: 0;
-    min-width: 200px;
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-lg);
-    padding: var(--space-sm) 0;
-  }
-
-  .dropdown-toggle[aria-expanded="true"] + .dropdown {
-    display: block;
-  }
-
-  .dropdown-link {
-    display: block;
-    padding: var(--space-sm) var(--space-lg);
-    font-size: 0.9rem;
-    color: var(--text);
-    transition: background var(--transition);
-  }
-
-  .dropdown-link:hover,
-  .dropdown-link.active {
-    background: var(--primary-light);
-    color: var(--primary);
-  }
-
-  /* Header CTA */
-  .header-cta {
-    padding: 0.5rem 1.25rem;
-    font-size: 0.875rem;
-  }
-
-  /* Mobile toggle */
-  .mobile-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    padding: var(--space-sm);
-  }
-
-  .bar {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: var(--text);
-    border-radius: 2px;
-    transition: transform var(--transition), opacity var(--transition);
-  }
-
-  .mobile-toggle.open .bar:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-  }
-  .mobile-toggle.open .bar:nth-child(2) {
-    opacity: 0;
-  }
-  .mobile-toggle.open .bar:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
-  }
-
-  /* Mobile nav */
-  .nav-mobile {
-    background: var(--bg);
-    border-bottom: 1px solid var(--border);
-    padding: var(--space-md) 0;
-  }
-
-  .mobile-list {
-    display: flex;
-    flex-direction: column;
-    padding: 0 var(--space-lg);
-  }
-
-  .mobile-link {
-    display: block;
-    padding: var(--space-sm) var(--space-md);
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--text-light);
-    border-radius: var(--radius-sm);
-  }
-
-  .mobile-link:hover,
-  .mobile-link.active {
-    color: var(--primary);
-    background: var(--primary-light);
-  }
-
-  .mobile-cta {
-    margin-top: var(--space-md);
-    text-align: center;
-    justify-content: center;
-  }
-
-  @media (max-width: 768px) {
-    .nav-desktop,
-    .header-cta {
-      display: none;
-    }
-    .mobile-toggle {
-      display: flex;
-    }
-  }
-</style>

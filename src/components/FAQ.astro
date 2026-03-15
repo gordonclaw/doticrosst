@@ -24,18 +24,23 @@ const schema = {
 };
 ---
 
-<div class="faq">
+<div class="mx-auto max-w-2xl">
   {
     items.map((item) => (
-      <details class="faq-item">
-        <summary class="faq-question">
+      <details class="group border-b border-gray-200">
+        <summary class="flex cursor-pointer items-center justify-between gap-4 py-5 text-base font-semibold text-charcoal transition-colors duration-200 hover:text-accent [&::-webkit-details-marker]:hidden">
           <span>{item.question}</span>
-          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <svg
+            class="h-5 w-5 flex-shrink-0 text-gray-400 transition-transform duration-200 group-open:rotate-180"
+            viewBox="0 0 20 20"
+            fill="none"
+            aria-hidden="true"
+          >
             <path d="M6 8l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
           </svg>
         </summary>
-        <div class="faq-answer">
-          <p>{item.answer}</p>
+        <div class="pb-5">
+          <p class="leading-relaxed text-gray-500">{item.answer}</p>
         </div>
       </details>
     ))
@@ -43,48 +48,3 @@ const schema = {
 </div>
 
 <script type="application/ld+json" set:html={JSON.stringify(schema)} />
-
-<style>
-  .faq {
-    max-width: 720px;
-    margin: 0 auto;
-  }
-
-  .faq-item {
-    border-bottom: 1px solid var(--border);
-  }
-
-  .faq-question {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space-md);
-    padding: var(--space-lg) 0;
-    font-weight: 600;
-    font-size: 1.05rem;
-    cursor: pointer;
-    list-style: none;
-  }
-
-  .faq-question::-webkit-details-marker {
-    display: none;
-  }
-
-  .faq-chevron {
-    flex-shrink: 0;
-    transition: transform var(--transition);
-  }
-
-  details[open] .faq-chevron {
-    transform: rotate(180deg);
-  }
-
-  .faq-answer {
-    padding-bottom: var(--space-lg);
-  }
-
-  .faq-answer p {
-    color: var(--text-light);
-    line-height: 1.7;
-  }
-</style>

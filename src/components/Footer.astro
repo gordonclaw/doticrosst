@@ -2,128 +2,58 @@
 const year = new Date().getFullYear();
 ---
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <span class="logo-text">dot<strong>icrosst</strong></span>
-        <p>
+<footer class="bg-charcoal pt-20 pb-10">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="lg:col-span-1">
+        <span class="text-xl font-light tracking-tight text-white">
+          dot<strong class="font-extrabold text-accent-light">icrosst</strong>
+        </span>
+        <p class="mt-4 max-w-xs leading-relaxed text-gray-400">
           Digital agency for hairdressers and barbers. We handle the tech so you
           can focus on your craft.
         </p>
       </div>
 
-      <div class="footer-col">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="/services/booking-systems/">Booking Systems</a></li>
-          <li><a href="/services/website-design/">Website Design</a></li>
-          <li><a href="/services/api-workflows/">API Workflows</a></li>
+      <div>
+        <h4 class="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-gray-400">
+          Services
+        </h4>
+        <ul class="space-y-3">
+          <li><a href="/services/booking-systems/" class="text-sm text-gray-400 transition-colors duration-200 hover:text-white">Booking Systems</a></li>
+          <li><a href="/services/website-design/" class="text-sm text-gray-400 transition-colors duration-200 hover:text-white">Website Design</a></li>
+          <li><a href="/services/api-workflows/" class="text-sm text-gray-400 transition-colors duration-200 hover:text-white">API Workflows</a></li>
         </ul>
       </div>
 
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="/about/">About</a></li>
-          <li><a href="/contact/">Contact</a></li>
-          <li><a href="/privacy/">Privacy Policy</a></li>
-          <li><a href="/terms/">Terms of Service</a></li>
+      <div>
+        <h4 class="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-gray-400">
+          Company
+        </h4>
+        <ul class="space-y-3">
+          <li><a href="/about/" class="text-sm text-gray-400 transition-colors duration-200 hover:text-white">About</a></li>
+          <li><a href="/contact/" class="text-sm text-gray-400 transition-colors duration-200 hover:text-white">Contact</a></li>
+          <li><a href="/privacy/" class="text-sm text-gray-400 transition-colors duration-200 hover:text-white">Privacy Policy</a></li>
+          <li><a href="/terms/" class="text-sm text-gray-400 transition-colors duration-200 hover:text-white">Terms of Service</a></li>
         </ul>
       </div>
 
-      <div class="footer-col">
-        <h4>Get in Touch</h4>
-        <ul>
-          <li><a href="mailto:hello@doticrosst.com">hello@doticrosst.com</a></li>
+      <div>
+        <h4 class="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-gray-400">
+          Get in Touch
+        </h4>
+        <ul class="space-y-3">
+          <li>
+            <a href="mailto:hello@doticrosst.com" class="text-sm text-gray-400 transition-colors duration-200 hover:text-accent-light">
+              hello@doticrosst.com
+            </a>
+          </li>
         </ul>
       </div>
     </div>
 
-    <div class="footer-bottom">
-      <p>&copy; {year} doticrosst. All rights reserved.</p>
+    <div class="mt-16 border-t border-white/10 pt-8 text-center">
+      <p class="text-sm text-gray-500">&copy; {year} doticrosst. All rights reserved.</p>
     </div>
   </div>
 </footer>
-
-<style>
-  .site-footer {
-    background: var(--bg-dark);
-    color: var(--text-inv);
-    padding: var(--space-4xl) 0 var(--space-xl);
-  }
-
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
-    gap: var(--space-3xl);
-  }
-
-  .footer-brand .logo-text {
-    font-size: 1.25rem;
-    font-weight: 400;
-    display: block;
-    margin-bottom: var(--space-md);
-  }
-
-  .footer-brand .logo-text strong {
-    font-weight: 800;
-    color: var(--accent);
-  }
-
-  .footer-brand p {
-    color: #9ca3af;
-    font-size: 0.9rem;
-    line-height: 1.6;
-  }
-
-  .footer-col h4 {
-    color: var(--text-inv);
-    font-size: 0.875rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: var(--space-md);
-  }
-
-  .footer-col a {
-    display: block;
-    color: #9ca3af;
-    font-size: 0.9rem;
-    padding: var(--space-xs) 0;
-    transition: color var(--transition);
-  }
-
-  .footer-col a:hover {
-    color: var(--text-inv);
-  }
-
-  .footer-bottom {
-    border-top: 1px solid #374151;
-    margin-top: var(--space-3xl);
-    padding-top: var(--space-lg);
-    text-align: center;
-  }
-
-  .footer-bottom p {
-    color: #6b7280;
-    font-size: 0.85rem;
-    margin: 0 auto;
-  }
-
-  @media (max-width: 768px) {
-    .footer-grid {
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-xl);
-    }
-    .footer-brand {
-      grid-column: 1 / -1;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .footer-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-</style>

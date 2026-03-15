@@ -30,20 +30,24 @@ const analyticsId = import.meta.env.PUBLIC_ANALYTICS_ID;
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="canonical" href={canonicalURL} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
     <meta name="generator" content={Astro.generator} />
 
     <title>{title}</title>
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
 
-    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(ogImage, Astro.site)} />
 
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
@@ -56,10 +60,7 @@ const analyticsId = import.meta.env.PUBLIC_ANALYTICS_ID;
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${analyticsId}`}
           />
-          <script
-            is:inline
-            define:vars={{ analyticsId }}
-          >
+          <script is:inline define:vars={{ analyticsId }}>
             window.dataLayer = window.dataLayer || [];
             function gtag() {
               dataLayer.push(arguments);
@@ -71,9 +72,9 @@ const analyticsId = import.meta.env.PUBLIC_ANALYTICS_ID;
       )
     }
   </head>
-  <body>
+  <body class="bg-white text-gray-800 font-sans">
     <Header />
-    <main id="main">
+    <main>
       <slot />
     </main>
     <Footer />
