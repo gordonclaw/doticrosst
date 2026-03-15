@@ -1,0 +1,128 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import FAQ from "../../components/FAQ.astro";
+import CTAStrip from "../../components/CTAStrip.astro";
+---
+
+<BaseLayout
+  title="Websites for Hairdressers & Barbers | doticrosst"
+  description="Specialist website design and SEO for hairdressers and barbers. We know the industry and build sites that turn local searches into booked appointments."
+>
+  <section class="bg-charcoal py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <Breadcrumb
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Services", href: "/services/" },
+          { label: "Hair & Barber Specialists" },
+        ]}
+      />
+      <div class="mt-4 max-w-2xl">
+        <div class="mb-4 inline-block rounded-lg bg-accent/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-accent-light">
+          Specialist Division
+        </div>
+        <h1 class="text-4xl font-black text-white sm:text-5xl">
+          Websites built for the chair
+        </h1>
+        <p class="mt-6 text-lg leading-relaxed text-gray-300">
+          Your next client is on their phone right now, searching "barber near
+          me" or "hairdresser [your town]". If your website is slow, invisible,
+          or non-existent -- they'll book with someone else. We fix that.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why a specialist -->
+  <section class="bg-white py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 items-start gap-16 lg:grid-cols-2">
+        <div>
+          <p class="text-sm font-bold uppercase tracking-[0.2em] text-accent">Why Specialist?</p>
+          <h2 class="mt-2 text-3xl font-black text-charcoal sm:text-4xl">
+            We know the hair business
+          </h2>
+          <p class="mt-4 leading-relaxed text-gray-500">
+            A generic web agency will ask you what you want. We already know.
+            We understand appointment patterns, walk-in culture, the
+            importance of a strong gallery, and what your clients search for
+            when they're looking for a new stylist or barber.
+          </p>
+          <p class="mt-4 leading-relaxed text-gray-500">
+            That means less back-and-forth, a faster build, and a site that
+            actually works for how your business operates.
+          </p>
+        </div>
+        <div class="space-y-4">
+          {[
+            { label: "Local search optimisation", desc: "We target the searches your clients actually make -- 'barber near me', 'hairdresser [your town]', specific service searches." },
+            { label: "Gallery that sells", desc: "Your work is your best marketing. We build gallery layouts designed to showcase cuts, colour, and styling." },
+            { label: "Booking integration", desc: "Seamless integration with your booking system. Every page has a clear path to 'Book Now'." },
+            { label: "Service pages that rank", desc: "Individual pages for cuts, colours, treatments, beard trims -- each optimised for the terms people search." },
+          ].map((item) => (
+            <div class="rounded-xl border border-gray-100 bg-gray-50 p-5">
+              <h3 class="font-bold text-charcoal">{item.label}</h3>
+              <p class="mt-1 text-sm leading-relaxed text-gray-500">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What you get -->
+  <section class="bg-gray-50 py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-accent">What You Get</p>
+        <h2 class="mt-2 text-3xl font-black text-charcoal sm:text-4xl">Built for how you work</h2>
+      </div>
+      <div class="mt-14 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {[
+          { title: "Mobile-first", desc: "70%+ of your clients search on their phone. Your site needs to look sharp and load fast on every screen.", icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>' },
+          { title: "Google Business Profile", desc: "We optimise your GBP listing so you show up in the map pack when locals search for hair services.", icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>' },
+          { title: "Lightning fast", desc: "Sub-second load times. No WordPress bloat, no heavy plugins. Just clean code that Google loves.", icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>' },
+          { title: "Gallery & portfolio", desc: "Show off your best work with optimised images that load fast and look sharp on every device.", icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>' },
+          { title: "Review integration", desc: "Display your Google reviews on your site to build trust before clients even walk through the door.", icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>' },
+          { title: "No monthly hosting bill", desc: "We build on static architecture hosted for free. Your only ongoing cost is support if you want it.", icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>' },
+        ].map((f) => (
+          <div class="group rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+            <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-accent/10 text-accent transition-all duration-300 group-hover:bg-accent group-hover:text-white">
+              <div class="h-6 w-6 transition-transform duration-300 group-hover:scale-110" set:html={f.icon} />
+            </div>
+            <h3 class="text-lg font-bold text-charcoal">{f.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-gray-500">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-white py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-accent">FAQ</p>
+        <h2 class="mt-2 text-3xl font-black text-charcoal sm:text-4xl">Frequently asked questions</h2>
+      </div>
+      <div class="mt-14">
+        <FAQ
+          items={[
+            { question: "I already have a website -- can you improve it?", answer: "Possibly, but honestly most of the time it's faster and cheaper to rebuild from scratch on our architecture. We'll give you an honest assessment on the call." },
+            { question: "Do I need to provide photos?", answer: "Photos of your work are the single most important thing on a hair/barber site. We'll guide you on what to shoot and how. Everything else we handle." },
+            { question: "Can you integrate with my booking system?", answer: "Yes. We integrate with all major booking platforms, or if you're using apptmint we can set that up seamlessly." },
+            { question: "How long until I see results from SEO?", answer: "Local SEO typically starts showing results within 4-8 weeks. We've had clients ranking on the first page within six weeks of launch." },
+            { question: "What does it cost?", answer: "We'll give you a clear quote on the discovery call. No hidden fees, no surprise invoices. Most hair/barber sites fall within a predictable range." },
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+
+  <CTAStrip
+    heading="Your clients are searching right now"
+    text="Make sure they find you, not a competitor down the road."
+    buttonText="Book a Free Call"
+  />
+</BaseLayout>

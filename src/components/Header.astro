@@ -7,9 +7,8 @@ const navLinks = [
     label: "Services",
     children: [
       { href: "/services/", label: "All Services" },
-      { href: "/services/booking-systems/", label: "Booking Systems" },
-      { href: "/services/website-design/", label: "Website Design" },
-      { href: "/services/api-workflows/", label: "API Workflows" },
+      { href: "/services/website-design/", label: "Website Design & SEO" },
+      { href: "/services/hair-barber/", label: "Hair & Barber Specialists" },
     ],
   },
   { href: "/about/", label: "About" },
@@ -49,7 +48,7 @@ function isActive(href: string) {
                 </svg>
               </button>
               <div class="invisible absolute left-0 top-full pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
-                <div class="min-w-[200px] rounded-xl border border-white/10 bg-charcoal-light p-2 shadow-2xl">
+                <div class="min-w-[220px] rounded-xl border border-white/10 bg-charcoal-light p-2 shadow-2xl">
                   {link.children.map((child) => (
                     <a
                       href={child.href}
