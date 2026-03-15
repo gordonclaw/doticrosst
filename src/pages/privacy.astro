@@ -1,0 +1,96 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+---
+
+<BaseLayout title="Privacy Policy | doticrosst" noindex={true}>
+  <div class="container">
+    <Breadcrumb
+      items={[
+        { label: "Home", href: "/" },
+        { label: "Privacy Policy" },
+      ]}
+    />
+  </div>
+
+  <section class="section">
+    <div class="container prose">
+      <h1>Privacy Policy</h1>
+      <p class="updated">Last updated: March 2026</p>
+
+      <h2>Who we are</h2>
+      <p>
+        doticrosst is a digital agency operated from the United Kingdom. Our
+        website address is https://doticrosst.com.
+      </p>
+
+      <h2>What data we collect</h2>
+      <p>
+        When you use our contact form, we collect your name, email address, and
+        the contents of your message. This data is processed by Netlify Forms
+        and stored securely.
+      </p>
+
+      <h2>How we use your data</h2>
+      <p>
+        We use the information you provide solely to respond to your enquiry and
+        to discuss potential services. We do not sell, rent, or share your
+        personal data with third parties.
+      </p>
+
+      <h2>Analytics</h2>
+      <p>
+        We may use analytics tools to understand how visitors use our website.
+        This data is anonymised and used only to improve our services.
+      </p>
+
+      <h2>Your rights</h2>
+      <p>
+        Under GDPR, you have the right to access, correct, or delete your
+        personal data. Contact us at hello@doticrosst.com to make a request.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        For any privacy-related questions, email us at
+        <a href="mailto:hello@doticrosst.com">hello@doticrosst.com</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .prose {
+    max-width: 720px;
+  }
+
+  .prose h1 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .updated {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: var(--space-2xl);
+  }
+
+  .prose h2 {
+    font-size: 1.25rem;
+    margin-top: var(--space-2xl);
+    margin-bottom: var(--space-sm);
+  }
+
+  .prose p {
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: var(--space-md);
+  }
+
+  .prose a {
+    color: var(--primary);
+  }
+
+  .prose a:hover {
+    text-decoration: underline;
+  }
+</style>

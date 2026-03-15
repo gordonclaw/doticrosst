@@ -1,0 +1,227 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+---
+
+<BaseLayout
+  title="Contact | doticrosst"
+  description="Get in touch with doticrosst. Book a free discovery call or send us a message."
+>
+  <div class="container">
+    <Breadcrumb
+      items={[
+        { label: "Home", href: "/" },
+        { label: "Contact" },
+      ]}
+    />
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h1>Let's talk</h1>
+          <p>
+            Whether you've got a specific project in mind or just want to
+            explore your options, we'd love to hear from you. No hard sell,
+            just a straight conversation.
+          </p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <h3>Email</h3>
+              <a href="mailto:hello@doticrosst.com">hello@doticrosst.com</a>
+            </div>
+            <div class="contact-item">
+              <h3>Response time</h3>
+              <p>Usually within 24 hours</p>
+            </div>
+          </div>
+        </div>
+
+        <form
+          class="contact-form"
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="form-name" value="contact" />
+          <p class="hidden" aria-hidden="true">
+            <label>
+              Don't fill this out: <input name="bot-field" tabindex="-1" />
+            </label>
+          </p>
+
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              autocomplete="name"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              autocomplete="email"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="business">Business name (optional)</label>
+            <input type="text" id="business" name="business" />
+          </div>
+
+          <div class="form-group">
+            <label for="service">What are you interested in?</label>
+            <select id="service" name="service">
+              <option value="">Select a service...</option>
+              <option value="booking-system">Booking System</option>
+              <option value="website-seo">Website & SEO</option>
+              <option value="automation">API Workflows & Automation</option>
+              <option value="not-sure">Not sure yet</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Tell us a bit about your project</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary form-submit">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const form = document.querySelector(".contact-form") as HTMLFormElement;
+  const submitBtn = form?.querySelector(".form-submit") as HTMLButtonElement;
+
+  form?.addEventListener("submit", () => {
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+  });
+</script>
+
+<style>
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4xl);
+    align-items: start;
+  }
+
+  .contact-info h1 {
+    margin-bottom: var(--space-md);
+  }
+
+  .contact-info > p {
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: var(--space-xl);
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .contact-item h3 {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-light);
+    margin-bottom: var(--space-xs);
+  }
+
+  .contact-item a {
+    color: var(--primary);
+    font-weight: 500;
+  }
+
+  .contact-item a:hover {
+    text-decoration: underline;
+  }
+
+  .contact-item p {
+    font-size: 0.95rem;
+  }
+
+  /* Form */
+  .contact-form {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+  }
+
+  .form-group {
+    margin-bottom: var(--space-lg);
+  }
+
+  label {
+    display: block;
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-bottom: var(--space-xs);
+    color: var(--text);
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 0.65rem 0.85rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--text);
+    background: var(--bg);
+    transition: border-color var(--transition), box-shadow var(--transition);
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-light);
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  .form-submit {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-xl);
+    }
+  }
+</style>

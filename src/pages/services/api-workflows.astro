@@ -1,0 +1,222 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import FAQ from "../../components/FAQ.astro";
+import CTAStrip from "../../components/CTAStrip.astro";
+---
+
+<BaseLayout
+  title="API Workflows & Automation | doticrosst"
+  description="Replace expensive SaaS tools with open-source alternatives. We connect your systems, automate your admin, and cut your software costs."
+>
+  <div class="container">
+    <Breadcrumb
+      items={[
+        { label: "Home", href: "/" },
+        { label: "Services", href: "/services/" },
+        { label: "API Workflows" },
+      ]}
+    />
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="page-intro">
+        <h1>Stop paying for software you don't need</h1>
+        <p>
+          Most small businesses are paying for a stack of SaaS tools that barely
+          talk to each other. We replace them with open-source alternatives,
+          connect the pieces with APIs, and automate the repetitive work that
+          eats your time.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>What we do</h2>
+      </div>
+      <div class="grid-3">
+        <div class="feature card">
+          <h3>SaaS replacement</h3>
+          <p>
+            Audit your current tools and replace the expensive ones with
+            open-source alternatives you own and control.
+          </p>
+        </div>
+        <div class="feature card">
+          <h3>API integration</h3>
+          <p>
+            Connect your booking system, accounting, email marketing, and
+            whatever else needs to talk to each other.
+          </p>
+        </div>
+        <div class="feature card">
+          <h3>Workflow automation</h3>
+          <p>
+            Automate the admin -- appointment confirmations, follow-up emails,
+            stock alerts, reporting. Set it and forget it.
+          </p>
+        </div>
+        <div class="feature card">
+          <h3>Data migration</h3>
+          <p>
+            Moving off a legacy platform? We extract, clean, and migrate your
+            data without losing anything.
+          </p>
+        </div>
+        <div class="feature card">
+          <h3>Custom dashboards</h3>
+          <p>
+            See your numbers in one place. Revenue, bookings, stock levels --
+            whatever matters to your business.
+          </p>
+        </div>
+        <div class="feature card">
+          <h3>Ongoing maintenance</h3>
+          <p>
+            Systems need looking after. We monitor, update, and fix things before
+            they become problems.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Common swaps</h2>
+        <p>Some of the replacements we make regularly.</p>
+      </div>
+      <div class="swaps">
+        <div class="swap-row">
+          <span class="swap-from">Expensive scheduling SaaS</span>
+          <span class="swap-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+          <span class="swap-to">BookJanus (flat fee)</span>
+        </div>
+        <div class="swap-row">
+          <span class="swap-from">Wix / Squarespace monthly</span>
+          <span class="swap-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+          <span class="swap-to">Static site (free hosting)</span>
+        </div>
+        <div class="swap-row">
+          <span class="swap-from">Mailchimp premium</span>
+          <span class="swap-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+          <span class="swap-to">Open-source email tooling</span>
+        </div>
+        <div class="swap-row">
+          <span class="swap-from">Multiple disconnected tools</span>
+          <span class="swap-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+          <span class="swap-to">One connected system</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Frequently asked questions</h2>
+      </div>
+      <FAQ
+        items={[
+          {
+            question: "Is this just for hair businesses?",
+            answer:
+              "No. While our booking and web services focus on the hair industry, our automation and API work applies to any small business that wants to cut software costs and streamline operations.",
+          },
+          {
+            question: "Will I lose features switching from paid SaaS?",
+            answer:
+              "We audit what you actually use before recommending any switch. Most businesses use about 20% of their paid tool's features. We make sure you keep everything that matters.",
+          },
+          {
+            question: "How much can I save?",
+            answer:
+              "It depends on your current stack, but typical savings are several hundred pounds per month. The initial build pays for itself quickly.",
+          },
+          {
+            question: "What if something breaks?",
+            answer:
+              "We offer ongoing maintenance plans. Systems are monitored and we fix issues proactively, usually before you notice them.",
+          },
+        ]}
+      />
+    </div>
+  </section>
+
+  <CTAStrip
+    heading="Curious how much you could save?"
+    text="Book a free audit call. We'll map your current tools and show you what's possible."
+    buttonText="Book a Free Audit"
+  />
+</BaseLayout>
+
+<style>
+  .page-intro {
+    max-width: 680px;
+  }
+
+  .page-intro h1 {
+    margin-bottom: var(--space-lg);
+  }
+
+  .page-intro p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+
+  .feature h3 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .feature p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+  }
+
+  /* Swaps */
+  .swaps {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .swap-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .swap-from {
+    flex: 1;
+    color: var(--text-light);
+    text-decoration: line-through;
+    font-size: 0.95rem;
+  }
+
+  .swap-arrow {
+    flex-shrink: 0;
+    color: var(--primary);
+  }
+
+  .swap-to {
+    flex: 1;
+    font-weight: 600;
+    color: var(--text);
+    font-size: 0.95rem;
+  }
+</style>

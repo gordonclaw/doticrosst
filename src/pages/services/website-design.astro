@@ -1,0 +1,187 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import FAQ from "../../components/FAQ.astro";
+import CTAStrip from "../../components/CTAStrip.astro";
+---
+
+<BaseLayout
+  title="Website Design & SEO for Hairdressers & Barbers | doticrosst"
+  description="Fast, mobile-first websites that rank locally. Built for salons and barbershops that want to show up when clients search."
+>
+  <div class="container">
+    <Breadcrumb
+      items={[
+        { label: "Home", href: "/" },
+        { label: "Services", href: "/services/" },
+        { label: "Website Design & SEO" },
+      ]}
+    />
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="page-intro">
+        <h1>Websites that turn searches into bookings</h1>
+        <p>
+          Your next client is on their phone right now, searching "barber near
+          me" or "hairdresser [your town]". If your website is slow, ugly, or
+          invisible on Google -- they'll book with someone else.
+        </p>
+        <p>
+          We build fast, clean websites designed specifically for the hair
+          industry, with local SEO baked in from day one.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>What's included</h2>
+      </div>
+      <div class="grid-3">
+        <div class="feature card">
+          <h3>Mobile-first design</h3>
+          <p>
+            Over 70% of your visitors are on their phone. Every site we build
+            looks and works perfectly on mobile first.
+          </p>
+        </div>
+        <div class="feature card">
+          <h3>Local SEO setup</h3>
+          <p>
+            Google Business Profile optimisation, local schema markup, and
+            keyword-targeted content to get you ranking in your area.
+          </p>
+        </div>
+        <div class="feature card">
+          <h3>Lightning fast</h3>
+          <p>
+            Static-first architecture means your site loads in under a second.
+            Fast sites rank higher and convert better.
+          </p>
+        </div>
+        <div class="feature card">
+          <h3>Service pages that convert</h3>
+          <p>
+            Dedicated pages for each service you offer -- cuts, colours, styling,
+            beard trims -- each optimised for search.
+          </p>
+        </div>
+        <div class="feature card">
+          <h3>Gallery</h3>
+          <p>
+            Show off your work. Optimised images that load fast and look sharp
+            on every screen.
+          </p>
+        </div>
+        <div class="feature card">
+          <h3>Booking integration</h3>
+          <p>
+            Seamless integration with BookJanus or your existing booking system.
+            Every page has a clear path to "Book Now".
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio placeholder -->
+  <section class="section" id="portfolio">
+    <div class="container">
+      <div class="section-header">
+        <h2>Recent work</h2>
+        <p>Sites we've built for salons and barbershops.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card portfolio-item">
+          <div class="portfolio-placeholder"></div>
+          <h3>Coming soon</h3>
+          <p>Portfolio items will be added as projects launch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Frequently asked questions</h2>
+      </div>
+      <FAQ
+        items={[
+          {
+            question: "How long does a website build take?",
+            answer:
+              "Most sites go live within 2-3 weeks from kickoff. We work fast because we know the hair industry well and have refined our process.",
+          },
+          {
+            question: "Do I need to provide content?",
+            answer:
+              "We'll guide you through it. You provide photos of your work and some basic info about your services -- we handle the copywriting and SEO.",
+          },
+          {
+            question: "Can I update the site myself?",
+            answer:
+              "Yes. We can add a simple content management system for things like gallery updates and blog posts. Or we can handle updates for you on a monthly plan.",
+          },
+          {
+            question: "What about hosting costs?",
+            answer:
+              "We host on Netlify which is free for the level of traffic most salons get. No hidden hosting fees.",
+          },
+        ]}
+      />
+    </div>
+  </section>
+
+  <CTAStrip
+    heading="Ready for a site that actually works?"
+    text="Let's build something your clients will love and Google will reward."
+  />
+</BaseLayout>
+
+<style>
+  .page-intro {
+    max-width: 680px;
+  }
+
+  .page-intro h1 {
+    margin-bottom: var(--space-lg);
+  }
+
+  .page-intro p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: var(--space-md);
+  }
+
+  .feature h3 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .feature p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+  }
+
+  .portfolio-placeholder {
+    width: 100%;
+    height: 200px;
+    background: var(--bg-alt);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-md);
+  }
+
+  .portfolio-item h3 {
+    margin-bottom: var(--space-xs);
+  }
+
+  .portfolio-item p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+  }
+</style>

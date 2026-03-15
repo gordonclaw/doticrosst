@@ -1,0 +1,42 @@
+---
+interface Props {
+  heading?: string;
+  text?: string;
+  buttonText?: string;
+  buttonHref?: string;
+}
+
+const {
+  heading = "Ready to grow your business?",
+  text = "Book a free discovery call and let's talk about what doticrosst can do for you.",
+  buttonText = "Get in Touch",
+  buttonHref = "/contact/",
+} = Astro.props;
+---
+
+<section class="cta-strip">
+  <div class="container cta-inner">
+    <h2>{heading}</h2>
+    <p>{text}</p>
+    <a href={buttonHref} class="btn btn-accent">{buttonText}</a>
+  </div>
+</section>
+
+<style>
+  .cta-strip {
+    background: var(--primary);
+    padding: var(--space-4xl) 0;
+    text-align: center;
+  }
+
+  .cta-inner h2 {
+    color: var(--text-inv);
+    margin-bottom: var(--space-md);
+  }
+
+  .cta-inner p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.1rem;
+    margin: 0 auto var(--space-xl);
+  }
+</style>

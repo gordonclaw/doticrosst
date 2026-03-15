@@ -1,0 +1,118 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import ServiceCard from "../../components/ServiceCard.astro";
+import CTAStrip from "../../components/CTAStrip.astro";
+---
+
+<BaseLayout
+  title="Services | doticrosst"
+  description="Booking systems, website design, SEO, and workflow automation for hairdressers and barbers."
+>
+  <div class="container">
+    <Breadcrumb
+      items={[
+        { label: "Home", href: "/" },
+        { label: "Services" },
+      ]}
+    />
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="page-intro">
+        <h1>Services built for the hair industry</h1>
+        <p>
+          We don't try to be everything to everyone. We focus on three things
+          that make the biggest difference for salons and barbershops -- and we
+          do them properly.
+        </p>
+      </div>
+      <div class="grid-3">
+        <ServiceCard
+          title="Booking Systems"
+          description="24/7 online booking with no per-appointment fees. Built around how you actually work, not how software companies think you should."
+          href="/services/booking-systems/"
+          icon='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>'
+        />
+        <ServiceCard
+          title="Website Design & SEO"
+          description="Fast, mobile-first sites that rank locally. We build the kind of site that turns a Google search into a booked appointment."
+          href="/services/website-design/"
+          icon='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>'
+        />
+        <ServiceCard
+          title="API Workflows & Automation"
+          description="Connect your tools, kill the spreadsheets, and stop paying for software you don't need. Open-source where possible, custom where it matters."
+          href="/services/api-workflows/"
+          icon='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>'
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why work with us?</h2>
+      </div>
+      <div class="grid-3">
+        <div class="benefit">
+          <h3>Hair industry focus</h3>
+          <p>
+            We understand salon workflows, appointment patterns, and what
+            clients expect when they search for a haircut.
+          </p>
+        </div>
+        <div class="benefit">
+          <h3>No monthly SaaS trap</h3>
+          <p>
+            We build on open-source tools you own. No surprise price hikes, no
+            vendor lock-in, no features held hostage behind premium tiers.
+          </p>
+        </div>
+        <div class="benefit">
+          <h3>Ongoing support</h3>
+          <p>
+            We don't disappear after launch. Affordable monthly plans keep your
+            site updated, secure, and performing.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTAStrip />
+</BaseLayout>
+
+<style>
+  .page-intro {
+    max-width: 640px;
+    margin-bottom: var(--space-3xl);
+  }
+
+  .page-intro h1 {
+    margin-bottom: var(--space-md);
+  }
+
+  .page-intro p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+
+  .benefit {
+    text-align: center;
+    padding: var(--space-xl);
+  }
+
+  .benefit h3 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .benefit p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin: 0 auto;
+  }
+</style>

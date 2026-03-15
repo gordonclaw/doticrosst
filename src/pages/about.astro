@@ -1,0 +1,125 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import CTAStrip from "../components/CTAStrip.astro";
+---
+
+<BaseLayout
+  title="About | doticrosst"
+  description="Meet the team behind doticrosst. We build digital tools for hairdressers and barbers who want to grow without the tech headache."
+>
+  <div class="container">
+    <Breadcrumb
+      items={[
+        { label: "Home", href: "/" },
+        { label: "About" },
+      ]}
+    />
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="about-intro">
+        <h1>Built by someone who gets it</h1>
+        <p class="lead">
+          doticrosst started with a simple observation: hairdressers and barbers
+          are some of the most creative people around, but they're stuck paying
+          through the nose for clunky software that doesn't work the way they do.
+        </p>
+        <p>
+          We're a small digital agency with one mission -- strip out the
+          overpriced SaaS tools, replace them with things that actually work, and
+          give you back the time and money you're currently wasting on tech that
+          should be simple.
+        </p>
+        <p>
+          Whether it's a booking system that doesn't charge you per appointment,
+          a website that actually shows up on Google, or automating the admin
+          that eats into your day -- we handle it so you can focus on your
+          clients.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why doticrosst?</h2>
+        <p>
+          The name is a play on "dot the i's and cross the t's" -- attention to
+          detail is what separates good work from great work. That applies to
+          haircuts and it applies to digital.
+        </p>
+      </div>
+      <div class="grid-3">
+        <div class="value-card">
+          <h3>No bloat</h3>
+          <p>
+            We don't build things you don't need. Every feature earns its place
+            by saving you time or making you money.
+          </p>
+        </div>
+        <div class="value-card">
+          <h3>No lock-in</h3>
+          <p>
+            You own your website, your data, your systems. We build on open
+            tools so you're never trapped by a vendor.
+          </p>
+        </div>
+        <div class="value-card">
+          <h3>No jargon</h3>
+          <p>
+            We explain things in plain English. You'll always know what we're
+            building, why, and what it costs.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTAStrip
+    heading="Let's have a chat"
+    text="No pitch, no pressure. Just a conversation about where your business is and where you want it to go."
+    buttonText="Book a Free Call"
+  />
+</BaseLayout>
+
+<style>
+  .about-intro {
+    max-width: 720px;
+  }
+
+  .about-intro h1 {
+    margin-bottom: var(--space-lg);
+  }
+
+  .lead {
+    font-size: 1.15rem;
+    color: var(--text);
+    line-height: 1.7;
+    margin-bottom: var(--space-lg);
+  }
+
+  .about-intro p {
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: var(--space-md);
+    max-width: none;
+  }
+
+  .value-card {
+    text-align: center;
+    padding: var(--space-xl);
+  }
+
+  .value-card h3 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .value-card p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin: 0 auto;
+  }
+</style>
