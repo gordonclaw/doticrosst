@@ -23,7 +23,7 @@ import CTAStrip from "../../components/CTAStrip.astro";
           Specialist Division
         </div>
         <h1 class="text-4xl font-black text-white sm:text-5xl">
-          Websites built for the chair
+          Websites for hairdressers and barbers
         </h1>
         <p class="mt-6 text-lg leading-relaxed text-gray-300">
           Your next client is on their phone right now, searching "barber near
@@ -199,7 +199,7 @@ import CTAStrip from "../../components/CTAStrip.astro";
                   : "border-2 border-charcoal text-charcoal hover:bg-charcoal hover:text-white",
               ]}
             >
-              Get Started
+              Choose {plan.name}
             </a>
           </div>
         ))}
@@ -235,6 +235,7 @@ import CTAStrip from "../../components/CTAStrip.astro";
   <CTAStrip
     heading="Your clients are searching right now"
     text="Make sure they find you, not a competitor down the road."
-    buttonText="Get a Free Quote"
+    buttonText="Get Your Salon Quote"
+    buttonHref="/get-started/"
   />
 </BaseLayout>

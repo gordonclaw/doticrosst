@@ -19,6 +19,19 @@ const {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const analyticsId = import.meta.env.PUBLIC_ANALYTICS_ID;
+
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "doticrosst",
+  url: "https://doticrosst.com",
+  logo: "https://doticrosst.com/favicon.svg",
+  description: "Web design and SEO agency for small businesses. Specialist division for hairdressers and barbers.",
+  email: "craig@doticrosst.com",
+  sameAs: [
+    "https://www.instagram.com/dottheicrosst"
+  ],
+};
 ---
 
 <!doctype html>
@@ -38,6 +51,7 @@ const analyticsId = import.meta.env.PUBLIC_ANALYTICS_ID;
     />
     <meta name="generator" content={Astro.generator} />
 
+    <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
     <title>{title}</title>
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
