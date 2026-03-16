@@ -1,0 +1,38 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ScopingForm from "../components/ScopingForm";
+---
+
+<BaseLayout
+  title="Get Started | Free Website Quote | doticrosst"
+  description="Answer a few quick questions about your business and get a clear website quote within one working day. No obligation, no jargon."
+>
+  <section class="bg-charcoal py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl text-center">
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-accent-light">Get Started</p>
+        <h1 class="mt-4 text-4xl font-black text-white sm:text-5xl">Tell us about your project</h1>
+        <p class="mx-auto mt-4 max-w-lg text-lg leading-relaxed text-gray-300">
+          Answer a few quick questions and we'll come back with a clear scope and quote. Takes about 2 minutes. No obligation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <ScopingForm client:load />
+
+      <form name="website-scoping" data-netlify="true" netlify-honeypot="bot-field" hidden>
+        <input name="business_name" /><input name="industry" /><input name="locations" />
+        <input name="years_in_business" /><input name="has_website" /><input name="website_url" />
+        <input name="website_platform" /><input name="has_google_business" /><input name="google_maps_url" />
+        <input name="instagram" /><input name="facebook" /><input name="project_type" />
+        <input name="pages_needed" /><input name="needs_booking" /><input name="needs_gallery" />
+        <input name="needs_blog" /><input name="needs_seo" /><input name="budget_range" />
+        <input name="timeline" /><input name="anything_else" /><input name="name" />
+        <input name="email" /><input name="phone" />
+      </form>
+    </div>
+  </section>
+</BaseLayout>

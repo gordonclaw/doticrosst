@@ -11,6 +11,7 @@
   --color-fresh: #10b981;
   --color-fresh-dark: #059669;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Anek Latin", ui-sans-serif, system-ui, sans-serif;
 }
 
 html {
@@ -20,4 +21,8 @@ html {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
 }
