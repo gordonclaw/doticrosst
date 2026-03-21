@@ -1,144 +1,129 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ServiceCard from "../components/ServiceCard.astro";
 import CTAStrip from "../components/CTAStrip.astro";
+import FAQ from "../components/FAQ.astro";
+
+const faqItems = [
+  { question: "Why not just use Wix or Squarespace?", answer: "They're fine for a basic placeholder but they're slow, bloated with features you don't need, and you're paying a monthly fee forever. Our websites load in under a second, score 100 on Lighthouse, and hosting is free. You pay for the build, you own the site." },
+  { question: "How is hosting free?", answer: "We build on static architecture and host on Netlify. For the traffic levels most small businesses get, hosting costs nothing. No monthly bill on top of everything else." },
+  { question: "Do I own my website?", answer: "Yes. Your code, your domain, your content. We build on open tools so you're never locked into a platform or tied to us. If you want to move on, everything is yours." },
+  { question: "How long does a website take to build?", answer: "Most sites go live within 2-3 weeks from when we start. We work fast because we've refined the process and don't use bloated page builders." },
+  { question: "What does a website cost?", answer: "Every project is different but we're upfront about pricing from the first conversation. Fill in our scoping form and we'll come back with a clear quote within one working day. No hidden fees." },
+];
 ---
 
 <BaseLayout
-  title="doticrosst | Website Design & SEO for Small Businesses"
+  title="Website Design & SEO for Small Businesses | doticrosst"
   description="Fast, mobile-first websites for small businesses. Local SEO, free hosting, no page builders. Specialist division for hairdressers and barbers."
 >
   <!-- Hero -->
-  <section class="relative overflow-hidden bg-charcoal pt-20 pb-20">
-    <div class="absolute inset-0 bg-gradient-to-br from-accent/15 via-charcoal to-charcoal-light"></div>
-    <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+  <section class="pb-32 pt-24 sm:pt-32 sm:pb-40">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <h1 class="text-5xl font-bold leading-[1.1] text-charcoal sm:text-6xl lg:text-7xl">
+          Websites that work harder than yours does right now.
+        </h1>
+        <p class="mt-8 max-w-xl text-lg leading-relaxed text-gray-500">
+          We build fast, hand-coded websites for small businesses. Sub-second load times, local SEO from day one, and free hosting. No page builders, no monthly platform fees.
+        </p>
+        <div class="mt-10 flex items-center gap-6">
+          <a href="/get-started/" class="rounded-full bg-charcoal px-7 py-3.5 text-sm font-medium text-white transition-all duration-200 hover:bg-charcoal-light">
+            Get a free quote
+          </a>
+          <a href="/services/" class="text-sm text-gray-500 underline underline-offset-4 decoration-gray-300 transition-colors duration-200 hover:text-charcoal hover:decoration-charcoal">
+            How we work
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Metrics strip -->
+  <section class="border-y border-gray-100 py-16">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 gap-12 sm:grid-cols-4">
         <div>
-          <p class="text-sm font-bold uppercase tracking-[0.25em] text-accent-light">
-            Website Design & SEO Agency
-          </p>
-          <h1 class="mt-4 text-4xl font-black leading-tight text-white sm:text-5xl">
-            Websites that work<br />
-            <span class="text-accent-light">as hard as you do.</span>
-          </h1>
-          <p class="mt-6 max-w-lg text-lg leading-relaxed text-gray-300">
-            We build fast, mobile-first websites for small businesses that actually
-            work. Sites that load in under a second, rank on Google, and turn
-            visitors into paying customers.
-          </p>
-          <div class="mt-8 flex flex-wrap gap-4">
-            <a href="/get-started/" class="rounded-lg bg-accent px-7 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-accent-light hover:shadow-lg hover:shadow-accent/25">
-              Get a Free Quote
-            </a>
-            <a href="/services/" class="rounded-lg border-2 border-white/20 px-7 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:border-accent-light hover:text-accent-light">
-              Our Services
-            </a>
-          </div>
-          <div class="mt-8 flex flex-wrap gap-5 text-sm text-gray-400">
-            {["No contracts", "No page builders", "Free hosting", "You own it"].map((t) => (
-              <span class="flex items-center gap-1.5">
-                <svg class="h-4 w-4 text-accent-light" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                {t}
-              </span>
-            ))}
-          </div>
+          <p class="text-4xl font-bold tracking-tight text-charcoal">100</p>
+          <p class="mt-2 text-sm text-gray-400">Lighthouse score</p>
         </div>
-        <div class="hidden lg:block">
-          <div class="grid grid-cols-2 gap-4">
-            <div class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-              <p class="text-3xl font-black text-white">100</p>
-              <p class="mt-1 text-xs text-gray-400">Lighthouse score</p>
-            </div>
-            <div class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-              <p class="text-3xl font-black text-white">&lt;1s</p>
-              <p class="mt-1 text-xs text-gray-400">Page load time</p>
-            </div>
-            <div class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-              <p class="text-3xl font-black text-accent-light">&pound;0</p>
-              <p class="mt-1 text-xs text-gray-400">Monthly hosting</p>
-            </div>
-            <div class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-              <p class="text-3xl font-black text-white">2-3</p>
-              <p class="mt-1 text-xs text-gray-400">Weeks to launch</p>
-            </div>
-          </div>
+        <div>
+          <p class="text-4xl font-bold tracking-tight text-charcoal">&lt;1s</p>
+          <p class="mt-2 text-sm text-gray-400">Page load</p>
+        </div>
+        <div>
+          <p class="text-4xl font-bold tracking-tight text-charcoal">&pound;0</p>
+          <p class="mt-2 text-sm text-gray-400">Monthly hosting</p>
+        </div>
+        <div>
+          <p class="text-4xl font-bold tracking-tight text-charcoal">2-3wk</p>
+          <p class="mt-2 text-sm text-gray-400">To launch</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Why your website matters -->
-  <section class="bg-white py-20">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="mx-auto max-w-3xl">
-        <p class="text-sm font-bold uppercase tracking-[0.2em] text-accent">Why It Matters</p>
-        <h2 class="mt-2 text-3xl font-black text-charcoal sm:text-4xl">Your website is your hardest working employee</h2>
-        <p class="mt-4 leading-relaxed text-gray-500">
-          It works 24 hours a day, 7 days a week. It never takes a sick day. When someone searches
-          for your business at 11pm on a Sunday, your website is the one answering the door. If it's
-          slow, outdated, or invisible on Google, you're losing customers to businesses with better
-          websites. That's money walking out the door every single day.
-        </p>
-        <p class="mt-4 leading-relaxed text-gray-500">
-          We build websites that work hard for you. Every site we deliver is hand-coded, loads in under
-          a second, scores 100 on Google Lighthouse, and is optimised for local search from day one.
-          No WordPress, no Wix, no drag-and-drop page builders full of plugins that slow everything
-          down. Just clean, fast code that Google loves and your customers trust.
-        </p>
+  <!-- Why it matters -->
+  <section class="py-32">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-16 lg:grid-cols-2">
+        <h2 class="text-3xl font-bold leading-tight text-charcoal sm:text-4xl lg:text-5xl">
+          Your website is your hardest working employee.
+        </h2>
+        <div class="space-y-6">
+          <p class="text-lg leading-relaxed text-gray-500">
+            It works 24 hours a day, 7 days a week. When someone searches for your business at 11pm on a Sunday, your website is the one answering the door.
+          </p>
+          <p class="leading-relaxed text-gray-500">
+            If it's slow, outdated, or invisible on Google, you're losing customers to businesses with better websites. Every site we deliver is hand-coded, loads in under a second, scores 100 on Google Lighthouse, and is optimised for local search from day one.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- What we do -->
-  <section class="bg-gray-50 py-20">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="text-center">
-        <p class="text-sm font-bold uppercase tracking-[0.2em] text-accent">What We Do</p>
-        <h2 class="mt-2 text-3xl font-black text-charcoal sm:text-4xl">Websites that work, from day one</h2>
-        <p class="mx-auto mt-4 max-w-xl text-gray-500">
-          We design and build websites that look sharp on every device, load fast,
-          and show up when your customers search.
-        </p>
-      </div>
-      <div class="mt-14 grid grid-cols-1 gap-8 md:grid-cols-3">
-        <ServiceCard
-          title="Website Design"
-          description="Clean, modern websites built on fast static architecture. Mobile-first, accessible, and designed to convert visitors into customers. Every site we build works hard to earn its keep."
-          href="/services/website-design/"
-          icon='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>'
-        />
-        <ServiceCard
-          title="Local SEO"
-          description="Google Business Profile setup, local schema markup, keyword-targeted pages, and content that gets you ranking in your area. We make your website work for local search."
-          href="/services/website-design/"
-          icon='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>'
-        />
-        <ServiceCard
-          title="Ongoing Support"
-          description="We don't disappear after launch. Monthly plans for updates, content changes, performance monitoring, and technical fixes. Your website keeps working, we keep it maintained."
-          href="/get-started/"
-          icon='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>'
-        />
+  <!-- Services -->
+  <section class="bg-charcoal py-32">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-white sm:text-4xl">What we do</h2>
+      <div class="mt-16 grid gap-px bg-white/10 sm:grid-cols-3">
+        <div class="bg-charcoal p-10">
+          <h3 class="text-lg font-semibold text-white">Website Design</h3>
+          <p class="mt-4 text-sm leading-relaxed text-gray-400">
+            Clean, modern websites built on fast static architecture. Mobile-first, accessible, and designed to convert visitors into customers.
+          </p>
+          <a href="/services/website-design/" class="mt-6 inline-block text-sm text-gray-500 underline underline-offset-4 decoration-gray-600 transition-colors hover:text-white hover:decoration-white">Learn more</a>
+        </div>
+        <div class="bg-charcoal p-10">
+          <h3 class="text-lg font-semibold text-white">Local SEO</h3>
+          <p class="mt-4 text-sm leading-relaxed text-gray-400">
+            Google Business Profile setup, local schema markup, keyword-targeted pages. We make your website work for local search.
+          </p>
+          <a href="/services/website-design/#local-seo" class="mt-6 inline-block text-sm text-gray-500 underline underline-offset-4 decoration-gray-600 transition-colors hover:text-white hover:decoration-white">Learn more</a>
+        </div>
+        <div class="bg-charcoal p-10">
+          <h3 class="text-lg font-semibold text-white">Ongoing Support</h3>
+          <p class="mt-4 text-sm leading-relaxed text-gray-400">
+            We don't disappear after launch. Monthly plans for updates, content changes, performance monitoring, and technical fixes.
+          </p>
+          <a href="/get-started/" class="mt-6 inline-block text-sm text-gray-500 underline underline-offset-4 decoration-gray-600 transition-colors hover:text-white hover:decoration-white">Learn more</a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Hair & Barber specialism -->
-  <section class="bg-white py-20">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+  <section class="py-32">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-16 lg:grid-cols-2 items-start">
         <div>
-          <p class="text-sm font-bold uppercase tracking-[0.2em] text-accent">Specialist Division</p>
-          <h2 class="mt-2 text-3xl font-black text-charcoal sm:text-4xl">
-            Websites for hairdressers & barbers
+          <p class="text-sm font-medium text-gray-400">Specialist division</p>
+          <h2 class="mt-3 text-3xl font-bold leading-tight text-charcoal sm:text-4xl lg:text-5xl">
+            Websites for hairdressers &amp; barbers.
           </h2>
-          <p class="mt-4 leading-relaxed text-gray-500">
-            We run a dedicated division for the hair industry because we know the business inside out.
-            Appointment patterns, walk-in culture, the importance of a strong gallery, and what
-            your clients actually search for when they need a new stylist or barber. Your website
-            should work as hard as you do behind the chair.
+          <p class="mt-6 text-lg leading-relaxed text-gray-500">
+            We run a dedicated division for the hair industry because we know the business inside out. Appointment patterns, walk-in culture, the importance of a strong gallery, and what your clients actually search for.
           </p>
-          <ul class="mt-6 space-y-3">
+          <ul class="mt-8 space-y-4">
             {[
               "Service pages optimised for local search",
               "Gallery layouts built for showcasing cuts and colour",
@@ -147,133 +132,92 @@ import CTAStrip from "../components/CTAStrip.astro";
               "Mobile-first, because 70%+ of your clients search on their phone",
             ].map((item) => (
               <li class="flex items-start gap-3 text-sm text-gray-600">
-                <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-fresh" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                </svg>
+                <span class="mt-1 block h-1.5 w-1.5 rounded-full bg-charcoal flex-shrink-0"></span>
                 {item}
               </li>
             ))}
           </ul>
           <a
             href="/services/hair-barber/"
-            class="mt-8 inline-flex items-center gap-2 rounded-lg bg-accent px-7 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-accent-light hover:shadow-lg hover:shadow-accent/25"
+            class="mt-10 inline-block rounded-full bg-charcoal px-7 py-3.5 text-sm font-medium text-white transition-all duration-200 hover:bg-charcoal-light"
           >
-            See hair & barber services
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-            </svg>
+            Hair &amp; barber services
           </a>
         </div>
 
         <!-- Portfolio: Hair by Dom -->
-        <div>
+        <div class="lg:mt-16">
           <a href="https://hairbydom.co.uk" target="_blank" rel="noopener noreferrer" class="group block">
-            <div class="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
+            <div class="overflow-hidden rounded-2xl border border-gray-100 bg-white transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
               <div class="relative bg-charcoal p-6">
                 <div class="flex items-center gap-2 mb-4">
-                  <div class="h-2.5 w-2.5 rounded-full bg-red-400"></div>
-                  <div class="h-2.5 w-2.5 rounded-full bg-yellow-400"></div>
-                  <div class="h-2.5 w-2.5 rounded-full bg-green-400"></div>
-                  <span class="ml-2 text-[10px] text-gray-400">hairbydom.co.uk</span>
+                  <div class="h-2 w-2 rounded-full bg-gray-600"></div>
+                  <div class="h-2 w-2 rounded-full bg-gray-600"></div>
+                  <div class="h-2 w-2 rounded-full bg-gray-600"></div>
+                  <span class="ml-2 text-[10px] text-gray-500">hairbydom.co.uk</span>
                 </div>
                 <div class="space-y-3">
-                  <div class="h-3 w-24 rounded bg-white/20"></div>
-                  <div class="h-6 w-48 rounded bg-white/30"></div>
+                  <div class="h-3 w-24 rounded bg-white/15"></div>
+                  <div class="h-6 w-48 rounded bg-white/25"></div>
                   <div class="h-3 w-64 rounded bg-white/10"></div>
                   <div class="mt-4 flex gap-2">
-                    <div class="h-8 w-20 rounded bg-accent/60"></div>
-                    <div class="h-8 w-20 rounded bg-white/10"></div>
+                    <div class="h-8 w-20 rounded-full bg-white/20"></div>
+                    <div class="h-8 w-20 rounded-full bg-white/10"></div>
                   </div>
                 </div>
               </div>
               <div class="p-6">
-                <div class="flex items-center justify-between">
-                  <div>
-                    <h3 class="font-bold text-charcoal">Hair by Dom</h3>
-                    <p class="mt-1 text-sm text-gray-500">Dunfermline, Fife</p>
-                  </div>
-                  <span class="rounded-lg bg-fresh/10 px-3 py-1 text-xs font-bold text-fresh-dark">Live</span>
-                </div>
+                <h3 class="font-semibold text-charcoal">Hair by Dom</h3>
+                <p class="mt-1 text-sm text-gray-400">Dunfermline, Fife</p>
                 <p class="mt-3 text-sm leading-relaxed text-gray-500">
-                  A website that works hard for a personal hairdressing salon in Dunfermline.
-                  Mobile-first build, sub-second load times, local SEO targeting West Fife.
-                  Booking and WhatsApp integration included.
+                  Mobile-first build, sub-second load times, local SEO targeting West Fife. Booking and WhatsApp integration.
                 </p>
-                <div class="mt-4 flex flex-wrap gap-2">
-                  {["Astro", "Tailwind", "Mobile-first", "Local SEO", "100 Lighthouse"].map((tag) => (
-                    <span class="rounded-md bg-gray-100 px-2 py-1 text-[10px] font-medium text-gray-500">{tag}</span>
-                  ))}
-                </div>
               </div>
             </div>
           </a>
-          <p class="mt-4 text-center text-xs text-gray-400">
-            <a href="https://hairbydom.co.uk" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Visit the Hair by Dom website</a>
-          </p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- How it works -->
-  <section class="bg-gray-50 py-20" id="how-it-works">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="text-center">
-        <p class="text-sm font-bold uppercase tracking-[0.2em] text-accent">How It Works</p>
-        <h2 class="mt-2 text-3xl font-black text-charcoal sm:text-4xl">Three steps to a website that works</h2>
-      </div>
-      <div class="mt-14 grid grid-cols-1 gap-12 md:grid-cols-3">
-        <div class="text-center">
-          <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-accent text-xl font-bold text-white">1</div>
-          <h3 class="mt-5 text-lg font-bold text-charcoal">Tell us about your business</h3>
-          <p class="mt-2 text-sm leading-relaxed text-gray-500">
-            Fill in our quick scoping form. It takes about two minutes and tells us
-            everything we need to give you a clear quote.
+  <section class="border-t border-gray-100 py-32">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-charcoal sm:text-4xl">How it works</h2>
+      <div class="mt-16 grid gap-16 sm:grid-cols-3">
+        <div>
+          <p class="text-5xl font-bold text-gray-200">01</p>
+          <h3 class="mt-4 text-lg font-semibold text-charcoal">Tell us about your business</h3>
+          <p class="mt-3 text-sm leading-relaxed text-gray-500">
+            Fill in our scoping form. Takes about two minutes and gives us everything we need to quote you.
           </p>
         </div>
-        <div class="text-center">
-          <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-accent text-xl font-bold text-white">2</div>
-          <h3 class="mt-5 text-lg font-bold text-charcoal">We build your website</h3>
-          <p class="mt-2 text-sm leading-relaxed text-gray-500">
-            Your site goes live in 2-3 weeks. Hand-coded, mobile-first, SEO-ready.
-            You review everything before launch and we don't stop until you're happy.
+        <div>
+          <p class="text-5xl font-bold text-gray-200">02</p>
+          <h3 class="mt-4 text-lg font-semibold text-charcoal">We build your website</h3>
+          <p class="mt-3 text-sm leading-relaxed text-gray-500">
+            Your site goes live in 2-3 weeks. Hand-coded, mobile-first, SEO-ready. You review everything before launch.
           </p>
         </div>
-        <div class="text-center">
-          <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-accent text-xl font-bold text-white">3</div>
-          <h3 class="mt-5 text-lg font-bold text-charcoal">Your website works for you</h3>
-          <p class="mt-2 text-sm leading-relaxed text-gray-500">
-            More traffic, more enquiries, a stronger first impression. Your website
-            works around the clock while you focus on running your business.
+        <div>
+          <p class="text-5xl font-bold text-gray-200">03</p>
+          <h3 class="mt-4 text-lg font-semibold text-charcoal">Your website works for you</h3>
+          <p class="mt-3 text-sm leading-relaxed text-gray-500">
+            More traffic, more enquiries, a stronger first impression. Your website works around the clock.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Why us -->
-  <section class="bg-white py-20">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="text-center">
-        <p class="text-sm font-bold uppercase tracking-[0.2em] text-accent">Why doticrosst</p>
-        <h2 class="mt-2 text-3xl font-black text-charcoal sm:text-4xl">Websites built differently</h2>
-      </div>
-      <div class="mx-auto mt-14 max-w-3xl space-y-6">
-        {[
-          { q: "Why not just use Wix or Squarespace?", a: "They're fine for a basic placeholder but they're slow, bloated with features you don't need, and you're paying a monthly fee forever. Our websites load in under a second, score 100 on Lighthouse, and hosting is free. You pay for the build, you own the site." },
-          { q: "How is hosting free?", a: "We build on static architecture and host on Netlify. For the traffic levels most small businesses get, hosting costs nothing. No monthly bill on top of everything else." },
-          { q: "Do I own my website?", a: "Yes. Your code, your domain, your content. We build on open tools so you're never locked into a platform or tied to us. If you want to move on, everything is yours." },
-          { q: "How long does a website take to build?", a: "Most sites go live within 2-3 weeks from when we start. We work fast because we've refined the process and don't use bloated page builders." },
-          { q: "What does a website cost?", a: "Every project is different but we're upfront about pricing from the first conversation. Fill in our scoping form and we'll come back with a clear quote within one working day. No hidden fees." },
-        ].map((faq) => (
-          <details class="group rounded-xl border border-gray-200 bg-gray-50 px-6">
-            <summary class="flex cursor-pointer items-center justify-between gap-4 py-5 text-sm font-semibold text-charcoal transition-colors duration-200 hover:text-accent [&::-webkit-details-marker]:hidden">
-              <span>{faq.q}</span>
-              <svg class="h-5 w-5 flex-shrink-0 text-gray-400 transition-transform duration-200 group-open:rotate-180" viewBox="0 0 20 20" fill="none"><path d="M6 8l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" /></svg>
-            </summary>
-            <div class="pb-5"><p class="text-sm leading-relaxed text-gray-500">{faq.a}</p></div>
-          </details>
-        ))}
+  <!-- FAQ -->
+  <section class="border-t border-gray-100 py-32">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-16 lg:grid-cols-2">
+        <h2 class="text-3xl font-bold text-charcoal sm:text-4xl">
+          Common questions
+        </h2>
+        <FAQ items={faqItems} />
       </div>
     </div>
   </section>
@@ -281,34 +225,7 @@ import CTAStrip from "../components/CTAStrip.astro";
   <CTAStrip
     heading="Ready for a website that works?"
     text="Fill in our scoping form and get a clear quote within one working day. No obligation."
-    buttonText="Get a Free Quote"
+    buttonText="Get a free quote"
     buttonHref="/get-started/"
   />
 </BaseLayout>
-
-<script>
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const el = entry.target as HTMLElement;
-          const target = parseInt(el.dataset.target || "0", 10);
-          let current = 0;
-          const step = Math.ceil(target / 40);
-          const interval = setInterval(() => {
-            current += step;
-            if (current >= target) {
-              current = target;
-              clearInterval(interval);
-            }
-            el.textContent = String(current);
-          }, 30);
-          observer.unobserve(el);
-        }
-      });
-    },
-    { threshold: 0.5 }
-  );
-
-  document.querySelectorAll(".stat-number").forEach((el) => observer.observe(el));
-</script>

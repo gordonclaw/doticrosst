@@ -9,13 +9,12 @@ import CTAStrip from "../../components/CTAStrip.astro";
   title="Web Design & SEO Services | doticrosst"
   description="Website design, local SEO, and ongoing support for small businesses. Specialist division for hairdressers and barbers."
 >
-  <section class="bg-charcoal py-20">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+  <section class="pt-12 pb-32">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Services" }]} />
       <div class="mt-4 max-w-2xl">
-        <p class="text-sm font-bold uppercase tracking-[0.2em] text-accent-light">Our Services</p>
-        <h1 class="mt-3 text-4xl font-black text-white sm:text-5xl">Web design and SEO services for small businesses</h1>
-        <p class="mt-6 text-lg leading-relaxed text-gray-300">
+        <h1 class="mt-3 text-4xl font-bold text-charcoal sm:text-5xl">Web Design & SEO for Small Businesses</h1>
+        <p class="mt-6 text-lg leading-relaxed text-gray-500">
           We design and build websites for small businesses, with a specialist
           division dedicated to the hair and barber industry. Every site is fast,
           mobile-first, and built to rank.
@@ -24,8 +23,8 @@ import CTAStrip from "../../components/CTAStrip.astro";
     </div>
   </section>
 
-  <section class="bg-white py-20">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+  <section class="py-32 border-t border-gray-100">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
         <ServiceCard
           title="Website Design & SEO"
@@ -44,10 +43,10 @@ import CTAStrip from "../../components/CTAStrip.astro";
   </section>
 
   <!-- Why these services -->
-  <section class="bg-gray-50 py-20">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+  <section class="py-32 border-t border-gray-100">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       <div class="mx-auto max-w-2xl">
-        <h2 class="text-2xl font-black text-charcoal">Web design and SEO that works for small businesses</h2>
+        <h2 class="text-2xl font-bold text-charcoal">Web design and SEO that works for small businesses</h2>
         <p class="mt-4 leading-relaxed text-gray-500">
           Most small businesses are stuck with either a DIY website built on Wix or Squarespace
           that loads slowly and ranks poorly, or they paid an agency thousands for a WordPress
@@ -76,11 +75,10 @@ import CTAStrip from "../../components/CTAStrip.astro";
   </section>
 
   <!-- What every site includes -->
-  <section class="bg-white py-20">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+  <section class="py-32 border-t border-gray-100">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       <div class="text-center">
-        <p class="text-sm font-bold uppercase tracking-[0.2em] text-accent">Every Build Includes</p>
-        <h2 class="mt-2 text-3xl font-black text-charcoal sm:text-4xl">The standard, raised</h2>
+        <h2 class="mt-2 text-3xl font-bold text-charcoal sm:text-4xl">The standard, raised</h2>
       </div>
       <div class="mx-auto mt-14 grid max-w-3xl grid-cols-1 gap-6 sm:grid-cols-2">
         {[
@@ -96,9 +94,7 @@ import CTAStrip from "../../components/CTAStrip.astro";
           "Ongoing support options",
         ].map((item) => (
           <div class="flex items-center gap-3 rounded-xl border border-gray-100 bg-white px-5 py-4 shadow-sm">
-            <svg class="h-5 w-5 flex-shrink-0 text-fresh" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-            </svg>
+            <span class="mt-1 block h-1.5 w-1.5 rounded-full bg-charcoal flex-shrink-0"></span>
             <span class="text-sm font-medium text-charcoal">{item}</span>
           </div>
         ))}

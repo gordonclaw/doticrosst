@@ -9,8 +9,8 @@ import CTAStrip from "../../components/CTAStrip.astro";
   title="Website Design & SEO | doticrosst"
   description="Fast, mobile-first websites with local SEO for small businesses. Built to rank, designed to convert."
 >
-  <section class="bg-charcoal py-20">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+  <section class="pt-12 pb-32">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -19,11 +19,10 @@ import CTAStrip from "../../components/CTAStrip.astro";
         ]}
       />
       <div class="mt-4 max-w-2xl">
-        <p class="text-sm font-bold uppercase tracking-[0.2em] text-accent-light">Website Design & SEO</p>
-        <h1 class="mt-3 text-4xl font-black text-white sm:text-5xl">
-          Website design and SEO for small businesses
+        <h1 class="mt-3 text-4xl font-bold text-charcoal sm:text-5xl">
+          Website Design & SEO Services
         </h1>
-        <p class="mt-6 text-lg leading-relaxed text-gray-300">
+        <p class="mt-6 text-lg leading-relaxed text-gray-500">
           Your website is your shopfront. If it's slow, ugly, or invisible on
           Google, you're losing customers to someone who got theirs right. We
           build sites that fix all three.
@@ -33,11 +32,10 @@ import CTAStrip from "../../components/CTAStrip.astro";
   </section>
 
   <!-- What's included -->
-  <section class="bg-white py-20">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+  <section class="py-32 border-t border-gray-100" id="local-seo">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       <div class="text-center">
-        <p class="text-sm font-bold uppercase tracking-[0.2em] text-accent">What's Included</p>
-        <h2 class="mt-2 text-3xl font-black text-charcoal sm:text-4xl">Everything you need to compete online</h2>
+        <h2 class="mt-2 text-3xl font-bold text-charcoal sm:text-4xl">Everything you need to compete online</h2>
       </div>
       <div class="mt-14 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         {[
@@ -49,7 +47,7 @@ import CTAStrip from "../../components/CTAStrip.astro";
           { title: "Ongoing support", desc: "Monthly plans for updates, content changes, and technical maintenance. We don't build it and disappear.", icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>' },
         ].map((f) => (
           <div class="group rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-            <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-accent/10 text-accent transition-all duration-300 group-hover:bg-accent group-hover:text-white">
+            <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-gray-100 text-charcoal transition-all duration-300 group-hover:bg-charcoal group-hover:text-white">
               <div class="h-6 w-6 transition-transform duration-300 group-hover:scale-110" set:html={f.icon} />
             </div>
             <h3 class="text-lg font-bold text-charcoal">{f.title}</h3>
@@ -61,10 +59,10 @@ import CTAStrip from "../../components/CTAStrip.astro";
   </section>
 
   <!-- Why your website matters -->
-  <section class="bg-gray-50 py-20">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+  <section class="py-32 border-t border-gray-100">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       <div class="mx-auto max-w-2xl">
-        <h2 class="text-2xl font-black text-charcoal">Why website design matters for small businesses</h2>
+        <h2 class="text-2xl font-bold text-charcoal">Why website design matters for small businesses</h2>
         <p class="mt-4 leading-relaxed text-gray-500">
           Your website is your most important marketing tool. When someone searches for what you
           do, your website is the first impression they get. If it is slow, hard to navigate, or
@@ -85,29 +83,28 @@ import CTAStrip from "../../components/CTAStrip.astro";
   </section>
 
   <!-- Our approach -->
-  <section class="bg-white py-20">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+  <section class="py-32 border-t border-gray-100">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       <div class="text-center">
-        <p class="text-sm font-bold uppercase tracking-[0.2em] text-accent">Our Approach</p>
-        <h2 class="mt-2 text-3xl font-black text-charcoal sm:text-4xl">Why we build differently</h2>
+        <h2 class="mt-2 text-3xl font-bold text-charcoal sm:text-4xl">Why we build differently</h2>
       </div>
       <div class="mx-auto mt-14 max-w-2xl space-y-8">
         <div class="flex gap-5">
-          <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-accent text-sm font-bold text-white">1</div>
+          <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-charcoal text-sm font-bold text-white">1</div>
           <div>
             <h3 class="font-bold text-charcoal">No page builders, no bloat</h3>
             <p class="mt-1 text-sm leading-relaxed text-gray-500">We hand-code every site. No WordPress, no Wix, no drag-and-drop page builders stuffed with plugins that slow everything down.</p>
           </div>
         </div>
         <div class="flex gap-5">
-          <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-accent text-sm font-bold text-white">2</div>
+          <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-charcoal text-sm font-bold text-white">2</div>
           <div>
             <h3 class="font-bold text-charcoal">You own it</h3>
             <p class="mt-1 text-sm leading-relaxed text-gray-500">Your code, your domain, your content. We build on open tools so you're never locked into a platform or tied to us if you want to move on.</p>
           </div>
         </div>
         <div class="flex gap-5">
-          <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-accent text-sm font-bold text-white">3</div>
+          <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-charcoal text-sm font-bold text-white">3</div>
           <div>
             <h3 class="font-bold text-charcoal">Free hosting, seriously</h3>
             <p class="mt-1 text-sm leading-relaxed text-gray-500">Our static architecture means hosting is free for the traffic levels most small businesses get. No monthly hosting bill on top of everything else.</p>
@@ -118,11 +115,10 @@ import CTAStrip from "../../components/CTAStrip.astro";
   </section>
 
   <!-- FAQ -->
-  <section class="bg-white py-20">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+  <section class="py-32 border-t border-gray-100">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       <div class="text-center">
-        <p class="text-sm font-bold uppercase tracking-[0.2em] text-accent">FAQ</p>
-        <h2 class="mt-2 text-3xl font-black text-charcoal sm:text-4xl">Frequently asked questions</h2>
+        <h2 class="mt-2 text-3xl font-bold text-charcoal sm:text-4xl">Frequently asked questions</h2>
       </div>
       <div class="mt-14">
         <FAQ

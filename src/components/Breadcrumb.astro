@@ -29,13 +29,13 @@ const schema = {
     {
       items.map((item, i) => (
         <li class="flex items-center gap-1.5">
-          {i > 0 && <span class="text-gray-600">/</span>}
+          {i > 0 && <span class="text-gray-300">/</span>}
           {item.href && i < items.length - 1 ? (
-            <a href={item.href} class="transition-colors duration-200 hover:text-accent-light">
+            <a href={item.href} class="transition-colors duration-200 hover:text-charcoal">
               {item.label}
             </a>
           ) : (
-            <span class="font-medium text-white">{item.label}</span>
+            <span class="font-medium text-charcoal">{item.label}</span>
           )}
         </li>
       ))
