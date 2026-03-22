@@ -18,7 +18,6 @@ const {
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const analyticsId = import.meta.env.PUBLIC_ANALYTICS_ID;
 
 const orgSchema = {
   "@context": "https://schema.org",
@@ -68,24 +67,14 @@ const orgSchema = {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL(ogImage, Astro.site)} />
 
-    {
-      analyticsId && (
-        <>
-          <script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=${analyticsId}`}
-          />
-          <script is:inline define:vars={{ analyticsId }}>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-              dataLayer.push(arguments);
-            }
-            gtag("js", new Date());
-            gtag("config", analyticsId);
-          </script>
-        </>
-      )
-    }
+    <script src="https://analytics.ahrefs.com/analytics.js" data-key="yqHunvLdlrSDhosODw4aSw" async></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-71CFMFEQYE"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-71CFMFEQYE');
+    </script>
   </head>
   <body class="bg-white text-gray-800 font-sans">
     <Header />
