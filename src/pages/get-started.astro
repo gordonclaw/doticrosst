@@ -4,53 +4,75 @@ import ScopingForm from "../components/ScopingForm";
 ---
 
 <BaseLayout
-  title="Get Started | Free Website Quote | doticrosst"
-  description="Answer a few quick questions about your business and get a clear website quote within one working day. No obligation, no jargon."
+  title="Start a Project | doticrosst"
+  description="Tell us about your project and get a clear quote within one working day. No obligation, no jargon."
 >
-  <section class="pt-12 pb-32">
+  <section class="bg-charcoal py-24">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <div class="mx-auto max-w-2xl text-center">
-        <h1 class="mt-4 text-4xl font-bold text-charcoal sm:text-5xl">Start Your Website Project</h1>
-        <p class="mx-auto mt-4 max-w-lg text-lg leading-relaxed text-gray-500">
-          Answer a few quick questions and we'll come back with a clear scope and quote. Takes about 2 minutes. No obligation.
-        </p>
+      <div class="grid gap-16 lg:grid-cols-[1fr_2fr]">
+        <div>
+          <h1 class="text-4xl font-bold text-white sm:text-5xl">Start<br />a Project</h1>
+          <p class="mt-6 text-gray-400">
+            Have an idea in mind? Website, SEO, or a complete rebrand for your business? Let's make it real.
+          </p>
+        </div>
+
+        <div>
+          <p class="text-sm font-medium text-gray-400 mb-6">What do you need?</p>
+          <div class="grid grid-cols-2 gap-4" id="service-picker">
+            <button type="button" data-service="website" class="service-card group rounded-xl border border-white/10 bg-white/5 p-8 text-center transition-all duration-200 hover:border-white/25 hover:bg-white/10 focus:outline-none focus:border-white/40">
+              <svg class="mx-auto h-12 w-12 text-gray-500 group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                <line x1="8" y1="21" x2="16" y2="21"/>
+                <line x1="12" y1="17" x2="12" y2="21"/>
+              </svg>
+              <p class="mt-4 text-sm font-medium text-gray-300">Website Design</p>
+            </button>
+            <button type="button" data-service="seo" class="service-card group rounded-xl border border-white/10 bg-white/5 p-8 text-center transition-all duration-200 hover:border-white/25 hover:bg-white/10 focus:outline-none focus:border-white/40">
+              <svg class="mx-auto h-12 w-12 text-gray-500 group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                <line x1="11" y1="8" x2="11" y2="14"/>
+                <line x1="8" y1="11" x2="14" y2="11"/>
+              </svg>
+              <p class="mt-4 text-sm font-medium text-gray-300">Local SEO</p>
+            </button>
+            <button type="button" data-service="hair" class="service-card group rounded-xl border border-white/10 bg-white/5 p-8 text-center transition-all duration-200 hover:border-white/25 hover:bg-white/10 focus:outline-none focus:border-white/40">
+              <svg class="mx-auto h-12 w-12 text-gray-500 group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 3v18"/><path d="M18 3v18"/>
+                <path d="M6 8c4 0 4 4 8 4s4-4 8-4"/>
+                <path d="M6 16c4 0 4-4 8-4s4 4 8 4"/>
+              </svg>
+              <p class="mt-4 text-sm font-medium text-gray-300">Hair / Barber</p>
+            </button>
+            <button type="button" data-service="support" class="service-card group rounded-xl border border-white/10 bg-white/5 p-8 text-center transition-all duration-200 hover:border-white/25 hover:bg-white/10 focus:outline-none focus:border-white/40">
+              <svg class="mx-auto h-12 w-12 text-gray-500 group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
+              </svg>
+              <p class="mt-4 text-sm font-medium text-gray-300">Ongoing Support</p>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="py-32 border-t border-gray-100">
+  <section class="py-32">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <div class="mx-auto mb-12 max-w-2xl">
-        <h2 class="text-2xl font-bold text-charcoal">How the scoping form works</h2>
-        <p class="mt-4 leading-relaxed text-gray-500">
-          Getting started with doticrosst takes about two minutes. The form below asks a few
-          straightforward questions about your business, what you need from a website, and
-          your timeline. There is no jargon and no trick questions. Once you submit, we review
-          your answers and come back with a clear, fixed-price quote within one working day.
-        </p>
-        <p class="mt-4 leading-relaxed text-gray-500">
-          This free website quote covers everything: design, build, local SEO setup, and
-          hosting. If you want ongoing support after launch, we will include pricing for that
-          too. There is zero obligation to proceed. We send you the quote, you think about it,
-          and you decide. No follow-up calls unless you want them.
-        </p>
-
-        <h2 class="mt-10 text-2xl font-bold text-charcoal">What happens after you get started</h2>
-        <p class="mt-4 leading-relaxed text-gray-500">
-          After you submit the form, we will email you with our initial thoughts, a clear
-          scope of work, and a fixed price. If anything needs clarifying, we will arrange a
-          short call, typically 15 to 20 minutes. Once you give the green light, your
-          website build starts immediately and is usually live within two to three weeks.
-        </p>
-        <p class="mt-4 leading-relaxed text-gray-500">
-          Throughout the build, you will see progress and have the chance to give feedback
-          before anything goes live. We do not disappear into a black box for three weeks
-          and then reveal something you did not ask for. Every project is collaborative,
-          transparent, and built to your requirements.
-        </p>
+      <div class="grid gap-16 lg:grid-cols-2">
+        <div>
+          <h2 class="text-2xl font-bold text-charcoal">Tell us about your project</h2>
+          <p class="mt-4 leading-relaxed text-gray-500">
+            Answer a few quick questions and we'll come back with a clear scope and quote within one working day. Takes about 2 minutes. No obligation.
+          </p>
+          <p class="mt-4 leading-relaxed text-gray-500">
+            The quote covers everything: design, build, local SEO setup, and hosting. If you want ongoing support after launch, we include pricing for that too. No follow-up calls unless you want them.
+          </p>
+        </div>
+        <div>
+          <ScopingForm client:load />
+        </div>
       </div>
-
-      <ScopingForm client:load />
 
       <form name="website-scoping" data-netlify="true" netlify-honeypot="bot-field" hidden>
         <input name="business_name" /><input name="industry" /><input name="locations" />
@@ -65,3 +87,14 @@ import ScopingForm from "../components/ScopingForm";
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  document.querySelectorAll('.service-card').forEach((card) => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('border-white/40');
+      card.classList.toggle('bg-white/15');
+      card.classList.toggle('border-white/10');
+      card.classList.toggle('bg-white/5');
+    });
+  });
+</script>
