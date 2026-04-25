@@ -2,66 +2,53 @@
 const year = new Date().getFullYear();
 ---
 
-<footer class="border-t border-line bg-cream pb-12 pt-20">
-  <div class="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-12 gap-y-12 gap-x-6 lg:gap-x-10">
-      <div class="col-span-12 lg:col-span-5">
-        <div class="inline-flex items-center gap-2">
-          <span class="block h-1.5 w-1.5 rounded-[2px] bg-accent"></span>
-          <span class="font-heading text-[18px] font-semibold tracking-[-0.02em] text-ink">doticrosst</span>
-        </div>
-        <p class="mt-5 max-w-[36ch] text-[14.5px] leading-[1.6] text-mute">
-          Hand-coded websites and local SEO for small UK businesses. Specialist division for hairdressers and barbers.
+<footer class="border-t border-gray-100 py-20">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-5">
+      <div class="lg:col-span-2">
+        <span class="text-lg tracking-[-0.03em] text-charcoal">dot<span class="font-semibold">icrosst</span></span>
+        <p class="mt-4 max-w-xs text-sm leading-relaxed text-gray-400">
+          Website design and SEO for small businesses. Specialist division for hairdressers and barbers.
         </p>
-        <a
-          href="/get-started/"
-          class="group mt-8 inline-flex items-center gap-2 rounded-md border border-line bg-paper px-4 py-2.5 text-[13px] font-medium text-ink transition-all duration-300 hover:border-ink/15 active:translate-y-[1px]"
-        >
-          Start a project
-          <svg width="11" height="11" viewBox="0 0 12 12" fill="none" class="transition-transform duration-300 group-hover:translate-x-0.5" aria-hidden="true">
-            <path d="M2.5 6h7m0 0L6 2.5M9.5 6L6 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </a>
       </div>
 
-      <div class="col-span-6 sm:col-span-4 lg:col-span-2 lg:col-start-7">
-        <p class="font-mono text-[10px] uppercase tracking-[0.18em] text-mute-faint">Services</p>
-        <ul class="mt-5 space-y-3">
-          <li><a href="/services/website-design/" class="text-[13.5px] text-mute transition-colors hover:text-ink">Website design &amp; SEO</a></li>
-          <li><a href="/services/hair-barber/" class="text-[13.5px] text-mute transition-colors hover:text-ink">Hair &amp; barber</a></li>
+      <div>
+        <p class="mb-4 text-xs font-medium text-gray-400">Services</p>
+        <ul class="space-y-3">
+          <li><a href="/services/website-design/" class="text-sm text-gray-500 transition-colors duration-200 hover:text-charcoal">Website Design & SEO</a></li>
+          <li><a href="/services/hair-barber/" class="text-sm text-gray-500 transition-colors duration-200 hover:text-charcoal">Hair & Barber</a></li>
         </ul>
       </div>
 
-      <div class="col-span-6 sm:col-span-4 lg:col-span-2">
-        <p class="font-mono text-[10px] uppercase tracking-[0.18em] text-mute-faint">Studio</p>
-        <ul class="mt-5 space-y-3">
-          <li><a href="/about/" class="text-[13.5px] text-mute transition-colors hover:text-ink">About</a></li>
-          <li><a href="/contact/" class="text-[13.5px] text-mute transition-colors hover:text-ink">Contact</a></li>
-          <li><a href="/privacy/" class="text-[13.5px] text-mute transition-colors hover:text-ink">Privacy</a></li>
-          <li><a href="/terms/" class="text-[13.5px] text-mute transition-colors hover:text-ink">Terms</a></li>
+      <div>
+        <p class="mb-4 text-xs font-medium text-gray-400">Company</p>
+        <ul class="space-y-3">
+          <li><a href="/about/" class="text-sm text-gray-500 transition-colors duration-200 hover:text-charcoal">About</a></li>
+          <li><a href="/contact/" class="text-sm text-gray-500 transition-colors duration-200 hover:text-charcoal">Contact</a></li>
+          <li><a href="/privacy/" class="text-sm text-gray-500 transition-colors duration-200 hover:text-charcoal">Privacy</a></li>
+          <li><a href="/terms/" class="text-sm text-gray-500 transition-colors duration-200 hover:text-charcoal">Terms</a></li>
         </ul>
       </div>
 
-      <div class="col-span-12 sm:col-span-4 lg:col-span-3">
-        <p class="font-mono text-[10px] uppercase tracking-[0.18em] text-mute-faint">Get in touch</p>
-        <ul class="mt-5 space-y-3">
+      <div>
+        <p class="mb-4 text-xs font-medium text-gray-400">Get in touch</p>
+        <ul class="space-y-3">
           <li>
-            <a href="mailto:craig@doticrosst.com" class="text-[13.5px] text-ink underline decoration-line underline-offset-[5px] transition-colors hover:decoration-ink">
+            <a href="mailto:craig@doticrosst.com" class="text-sm text-gray-500 transition-colors duration-200 hover:text-charcoal">
               craig@doticrosst.com
             </a>
           </li>
           <li>
-            <a href="https://www.instagram.com/dottheicrosst" target="_blank" rel="noopener noreferrer" class="text-[13.5px] text-mute transition-colors hover:text-ink">
-              Instagram &middot; @dottheicrosst
+            <a href="https://www.instagram.com/dottheicrosst" target="_blank" rel="noopener noreferrer" class="text-sm text-gray-500 transition-colors duration-200 hover:text-charcoal">
+              Instagram
             </a>
           </li>
         </ul>
       </div>
     </div>
 
-    <div class="mt-16 flex flex-col items-start gap-3 border-t border-line pt-8 sm:flex-row sm:items-center sm:justify-between">
-      <p class="font-mono text-[11px] tabular-nums text-mute-faint">&copy; {year} doticrosst &middot; Edinburgh / Fife</p>
-      <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-mute-faint">Hand-coded, never generated</p>
+    <div class="mt-16 border-t border-gray-100 pt-8">
+      <p class="text-xs text-gray-400">&copy; {year} doticrosst</p>
     </div>
   </div>
 </footer>

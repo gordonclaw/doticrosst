@@ -24,25 +24,23 @@ const schema = {
 };
 ---
 
-<div>
+<div class="mx-auto max-w-2xl">
   {
-    items.map((item, i) => (
-      <details class="group border-t border-line first:border-t-0">
-        <summary class="grid cursor-pointer grid-cols-[auto_1fr_auto] items-baseline gap-5 py-6 text-left transition-colors duration-200 [&::-webkit-details-marker]:hidden">
-          <span class="font-mono text-[11px] tabular-nums text-mute-faint">0{i + 1}</span>
-          <span class="font-heading text-[17px] font-semibold tracking-[-0.01em] text-ink group-hover:text-ink-soft">
-            {item.question}
-          </span>
-          <span class="grid h-7 w-7 place-items-center rounded-md border border-line text-mute transition-all duration-300 group-open:rotate-45 group-open:border-ink/20 group-open:text-ink">
-            <svg class="h-3 w-3" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-              <path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-            </svg>
-          </span>
+    items.map((item) => (
+      <details class="group border-b border-gray-200">
+        <summary class="flex cursor-pointer items-center justify-between gap-4 py-5 text-base font-semibold text-charcoal transition-colors duration-200 hover:text-gray-500 [&::-webkit-details-marker]:hidden">
+          <span>{item.question}</span>
+          <svg
+            class="h-5 w-5 flex-shrink-0 text-gray-400 transition-transform duration-200 group-open:rotate-180"
+            viewBox="0 0 20 20"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path d="M6 8l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
         </summary>
-        <div class="grid grid-cols-[auto_1fr_auto] gap-5 pb-6">
-          <span></span>
-          <p class="max-w-[58ch] text-[14.5px] leading-[1.65] text-mute">{item.answer}</p>
-          <span></span>
+        <div class="pb-5">
+          <p class="leading-relaxed text-gray-500">{item.answer}</p>
         </div>
       </details>
     ))
